@@ -6,6 +6,7 @@ public class arca {
 	int cantidadMaxima;
 	int idArca;
 	int denominacion;
+	
 	public int getCantidadAlmacenada() {
 		return cantidadAlmacenada;
 	}

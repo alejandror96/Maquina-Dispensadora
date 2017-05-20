@@ -6,6 +6,7 @@ public class espiral {
 	String nombreProducto;
 	int precioProducto;
 	int capacidad;
+	
 	public String getCodigo() {
 		return codigo;
 	}

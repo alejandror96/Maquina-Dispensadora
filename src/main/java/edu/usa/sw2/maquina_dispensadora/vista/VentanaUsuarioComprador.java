@@ -43,7 +43,7 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
         configurarVentana();
     }    
     
-    private void cancelarCompra() {
+    public void cancelarCompra() {
     	
     	botonCancelarCompra = new JButton();    
         botonCancelarCompra.setText("Cancelar compra");   
@@ -66,7 +66,7 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
     	ingresarDinero.setText("");
     }
 
-	private void enviarConfimacionCompra() {
+    public void enviarConfimacionCompra() {
 
     	botonConfirmarCompra = new JButton();
     	botonConfirmarCompra.setText("Confirmar compra");   
@@ -86,7 +86,7 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
     	return informacionCompra;
     }
     
-	private void enviarDinero() {
+    public void enviarDinero() {
         
         botonEnviarDinero = new JButton();
     	botonEnviarDinero.setText("Enviar dinero");   
@@ -124,7 +124,7 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
     	return codigo;
     }
     
-	private void inicializarComponentesCodigo() {
+    public void inicializarComponentesCodigo() {
 
     	tituloCodigo = new JLabel();
         ingresarCodigo = new JTextField();       
@@ -135,7 +135,7 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
         this.add(ingresarCodigo);
 	}
 
-	private void inicializarComponentesDinero() {
+    public void inicializarComponentesDinero() {
 
 		ingresarDinero = new JTextField();        
         tituloDinero = new JLabel();
@@ -146,7 +146,7 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
         this.add(ingresarDinero);
 	}
 
-	private void configurarVentana() {
+    public void configurarVentana() {
     	
         this.setTitle("Máquina Dispensadora - Comprador");                 
         this.setSize(530, 270);                                 
@@ -156,7 +156,7 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);    
     }
     
-    private void mostrarEspirales(String informacionEspiral){
+    public void mostrarEspirales(String informacionEspiral){
     	
     	espirales = new JLabel();
     	espirales.setText(informacionEspiral); 
@@ -164,7 +164,7 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
     	this.add(espirales);
     }
     
-    private void mostrarInformacionProducto(String nombre, String precio){
+    public void mostrarInformacionProducto(String nombre, String precio){
     	
     	informacionProducto = new JLabel();
     	informacionProducto.setText(nombre+": "+precio); 
@@ -172,7 +172,7 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
     	this.add(informacionProducto);
     }
     
-    private void mostrarCambio(int cambioAMostrar){
+    public void mostrarCambio(int cambioAMostrar){
     	
     	cambio = new JLabel();
     	cambio.setText("Cambio: "+cambioAMostrar);
@@ -180,7 +180,7 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
         this.add(cambio);
     }
     
-    private void mostrarDineroFaltante(int dineroFaltanteAMostrar){
+    public void mostrarDineroFaltante(int dineroFaltanteAMostrar){
 
     	dineroFaltante = new JLabel();
     	dineroFaltante.setText("Dinero faltante: "+dineroFaltanteAMostrar);
@@ -188,7 +188,7 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
         this.add(dineroFaltante);
     }
     
-    private void mostrarDineroIngresado(int dinero){
+    public void mostrarDineroIngresado(int dinero){
     	
     	dineroIngresado = new JLabel();
     	dineroIngresado.setText("Dinero ingresado: "+dinero);    

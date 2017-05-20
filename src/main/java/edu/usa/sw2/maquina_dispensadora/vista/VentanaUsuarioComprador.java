@@ -17,11 +17,9 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
     JLabel dineroFaltante;
     JLabel cambio;
     JLabel tituloCodigo;
-    JLabel tituloDinero;
-    
+    JLabel tituloDinero;  
     JTextField ingresarCodigo;
-    JTextField ingresarDinero;
-    
+    JTextField ingresarDinero;   
     JButton botonEnviarCodigo;
     JButton botonEnviarDinero;
     JButton botonConfirmarCompra;
@@ -82,6 +80,7 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
 	}
 
     public String obtenerInformacionConfirmar(ActionEvent e){
+    	
     	String informacionCompra = ingresarCodigo.getText()+","+ingresarDinero.getText();
     	System.out.println("Producto a comprar: "+informacionCompra);
     	return informacionCompra;
@@ -128,25 +127,21 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
 	private void inicializarComponentesCodigo() {
 
     	tituloCodigo = new JLabel();
-        ingresarCodigo = new JTextField();
-        
+        ingresarCodigo = new JTextField();       
         tituloCodigo.setText("Código: ");    
         tituloCodigo.setBounds(220, 50, 80, 25);
-        ingresarCodigo.setBounds(275, 50, 100, 25);
-        
+        ingresarCodigo.setBounds(275, 50, 100, 25);       
         this.add(tituloCodigo);
         this.add(ingresarCodigo);
 	}
 
 	private void inicializarComponentesDinero() {
 
-		ingresarDinero = new JTextField();
-        
+		ingresarDinero = new JTextField();        
         tituloDinero = new JLabel();
         tituloDinero.setText("Dinero: ");    
         tituloDinero.setBounds(220, 80, 80, 25);
-        ingresarDinero.setBounds(275, 80, 100, 25);
-        
+        ingresarDinero.setBounds(275, 80, 100, 25);      
         this.add(tituloDinero);
         this.add(ingresarDinero);
 	}

@@ -28,7 +28,7 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
     JButton botonEnviarDinero;
     JButton botonConfirmarCompra;
     JButton botonCancelarCompra;
-    int contadorDinero = 0;
+    int contadorDinero;
 
     public VentanaUsuarioComprador() {
     	
@@ -41,7 +41,7 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
         mostrarDineroIngresado();
         mostrarEspirales();   
         enviarCodigo();
-        enviarDinero();
+        enviarDinero(contadorDinero);
         enviarConfimacionCompra();              
         cancelarCompra(); 
         
@@ -97,7 +97,7 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
 		}
     }
     
-    public void enviarDinero() {
+    public int enviarDinero(int contador) {
         
         botonEnviarDinero = new JButton();
     	dineroIngresado = new JLabel();
@@ -117,6 +117,8 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
             });       
         this.add(botonEnviarDinero);
         this.add(dineroIngresado);
+        
+        return contadorDinero;
 	}
 
 	public void enviarCodigo() {

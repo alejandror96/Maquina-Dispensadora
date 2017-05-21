@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import edu.usa.sw2.maquina_dispensadora.controlador.controladorDinero;
+import edu.usa.sw2.maquina_dispensadora.controlador.controladorVistaComprador;
 import edu.usa.sw2.maquina_dispensadora.modelo.Espiral;
 
 public class VentanaUsuarioComprador extends JFrame implements ActionListener {
@@ -29,6 +30,7 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
     JButton botonConfirmarCompra;
     JButton botonCancelarCompra;
     int contadorDinero;
+    String codigo;
 
     public VentanaUsuarioComprador() {
     	
@@ -109,7 +111,7 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
             	try {
                 	contadorDinero = contadorDinero+Integer.parseInt(ingresarDinero.getText());
 				} catch (Exception e2) {
-					JOptionPane.showMessageDialog(null, "Datos ingresados incorrecramente", "Error", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Datos ingresados incorrectamente", "Error", JOptionPane.ERROR_MESSAGE);
 				}
             	dineroIngresado.setText("Dinero ingresado: "+contadorDinero);
                 ingresarDinero.setText("");
@@ -128,14 +130,20 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
         botonEnviarCodigo.setBounds(375, 50, 130, 30);  
         botonEnviarCodigo.addActionListener(new ActionListener(){       	
             public void actionPerformed (ActionEvent e){      
-            	obtenerCodigo(e);
+            	try {
+                	codigo = ingresarCodigo.getText();
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, "Datos ingresados incorrectamente", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+            	
             	}
             });         
-        this.add(botonEnviarCodigo);   
+        this.add(botonEnviarCodigo);
+        
 	}
     
     public String obtenerCodigo(ActionEvent e){
-    	String codigo = ingresarCodigo.getText();
+    	codigo = ingresarCodigo.getText();
     	System.out.println("Codigo: "+codigo);
     	return codigo;
     }
@@ -180,12 +188,13 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
     	this.add(espirales);
     }
     
-    public void mostrarInformacionProducto(){
+    public JLabel mostrarInformacionProducto(){
     	
     	informacionProducto = new JLabel();
     	informacionProducto.setText(": "); 
     	informacionProducto.setBounds(220, 20, 300, 25);  
     	this.add(informacionProducto);
+		return informacionProducto;
     }
     
     public void mostrarCambio(){

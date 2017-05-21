@@ -1,5 +1,7 @@
 package edu.usa.sw2.maquina_dispensadora.modelo;
 
+import java.util.ArrayList;
+
 public class Espiral {
 
 	boolean estado=false;
@@ -38,5 +40,12 @@ public class Espiral {
 	}
 	public void setEstado(boolean estado) {
 		this.estado = estado;
+	}
+	public ArrayList enviarInformacionProducto(String nombre, String precio){
+		ArrayList<String> informacion= new ArrayList<String>();
+		informacion.add(precio);
+		informacion.add(nombre);
+		
+		return informacion; 
 	}
 }

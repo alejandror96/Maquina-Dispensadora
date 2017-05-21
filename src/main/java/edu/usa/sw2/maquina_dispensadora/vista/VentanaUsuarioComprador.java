@@ -135,7 +135,6 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
 				} catch (Exception e2) {
 					JOptionPane.showMessageDialog(null, "Datos ingresados incorrectamente", "Error", JOptionPane.ERROR_MESSAGE);
 				}
-            	
             	}
             });         
         this.add(botonEnviarCodigo);

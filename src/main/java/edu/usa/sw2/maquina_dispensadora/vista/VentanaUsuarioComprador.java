@@ -9,9 +9,13 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import edu.usa.sw2.maquina_dispensadora.controlador.controladorDinero;
+import edu.usa.sw2.maquina_dispensadora.modelo.Espiral;
+
 public class VentanaUsuarioComprador extends JFrame implements ActionListener {
 
     JLabel informacionProducto;
+    JLabel tituloDineroIngresado;
     JLabel dineroIngresado;
     JLabel espirales;
     JLabel dineroFaltante;
@@ -24,17 +28,18 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
     JButton botonEnviarDinero;
     JButton botonConfirmarCompra;
     JButton botonCancelarCompra;
+    int contadorDinero = 0;
 
     public VentanaUsuarioComprador() {
     	
         super();
         inicializarComponentesDinero();
         inicializarComponentesCodigo();
-        mostrarInformacionProducto("nombre", "precio");
-        mostrarCambio(2000);
-        mostrarDineroFaltante(2000);
-        mostrarDineroIngresado(2000);
-        mostrarEspirales("estas son las espirales");   
+        mostrarInformacionProducto();
+        mostrarCambio();
+        mostrarDineroFaltante();
+        mostrarDineroIngresado();
+        mostrarEspirales();   
         enviarCodigo();
         enviarDinero();
         enviarConfimacionCompra();              
@@ -64,6 +69,7 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
     	cambio.setText("");
     	ingresarCodigo.setText("");
     	ingresarDinero.setText("");
+    	contadorDinero = 0;
     }
 
     public void enviarConfimacionCompra() {
@@ -79,31 +85,39 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
         this.add(botonConfirmarCompra);
 	}
 
-    public String obtenerInformacionConfirmar(ActionEvent e){
+    public void obtenerInformacionConfirmar(ActionEvent e){
     	
-    	String informacionCompra = ingresarCodigo.getText()+","+ingresarDinero.getText();
-    	System.out.println("Producto a comprar: "+informacionCompra);
-    	return informacionCompra;
+    	try {
+    		Espiral espiral = new Espiral();
+    		controladorDinero dinero = new controladorDinero();
+			espiral.setCodigo(ingresarCodigo.getText());
+			dinero.setDineroIngresado(Integer.parseInt(ingresarDinero.getText()));
+		} catch (Exception e2) {
+			JOptionPane.showMessageDialog(null, "Datos ingresados incorrecramente", "Error", JOptionPane.ERROR_MESSAGE);
+		}
     }
     
     public void enviarDinero() {
         
         botonEnviarDinero = new JButton();
+    	dineroIngresado = new JLabel();
     	botonEnviarDinero.setText("Enviar dinero");   
         botonEnviarDinero.setBounds(375, 80, 130, 30);  
+        dineroIngresado.setBounds(220, 110, 300, 25);
         botonEnviarDinero.addActionListener(new ActionListener(){       	
-            public void actionPerformed (ActionEvent e){      
-            	obtenerDinero(e);
+            public void actionPerformed (ActionEvent e){  
+            	try {
+                	contadorDinero = contadorDinero+Integer.parseInt(ingresarDinero.getText());
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, "Datos ingresados incorrecramente", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+            	dineroIngresado.setText("Dinero ingresado: "+contadorDinero);
+                ingresarDinero.setText("");
             	}
             });       
         this.add(botonEnviarDinero);
+        this.add(dineroIngresado);
 	}
-    
-    public String obtenerDinero(ActionEvent e){
-    	String dinero = ingresarDinero.getText();
-    	System.out.println("Dinero: "+dinero);
-    	return dinero;
-    }
 
 	public void enviarCodigo() {
 
@@ -156,44 +170,42 @@ public class VentanaUsuarioComprador extends JFrame implements ActionListener {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);    
     }
     
-    public void mostrarEspirales(String informacionEspiral){
+    public void mostrarEspirales(){
     	
     	espirales = new JLabel();
-    	espirales.setText(informacionEspiral); 
+    	espirales.setText(""); 
     	espirales.setBounds(20, 20, 300, 25);  
     	this.add(espirales);
     }
     
-    public void mostrarInformacionProducto(String nombre, String precio){
+    public void mostrarInformacionProducto(){
     	
     	informacionProducto = new JLabel();
-    	informacionProducto.setText(nombre+": "+precio); 
+    	informacionProducto.setText(": "); 
     	informacionProducto.setBounds(220, 20, 300, 25);  
     	this.add(informacionProducto);
     }
     
-    public void mostrarCambio(int cambioAMostrar){
+    public void mostrarCambio(){
     	
     	cambio = new JLabel();
-    	cambio.setText("Cambio: "+cambioAMostrar);
+    	cambio.setText("Cambio: ");
     	cambio.setBounds(220, 170, 100, 25);
         this.add(cambio);
     }
     
-    public void mostrarDineroFaltante(int dineroFaltanteAMostrar){
+    public void mostrarDineroFaltante(){
 
     	dineroFaltante = new JLabel();
-    	dineroFaltante.setText("Dinero faltante: "+dineroFaltanteAMostrar);
+    	dineroFaltante.setText("Dinero faltante: ");
     	dineroFaltante.setBounds(220, 140, 300, 25);
         this.add(dineroFaltante);
     }
     
-    public void mostrarDineroIngresado(int dinero){
+    public void mostrarDineroIngresado(){
     	
-    	dineroIngresado = new JLabel();
-    	dineroIngresado.setText("Dinero ingresado: "+dinero);    
-        dineroIngresado.setBounds(220, 110, 300, 25);
-        this.add(dineroIngresado);
+    	controladorDinero dinero = new controladorDinero();
+    	
     }
 
     public void actionPerformed(ActionEvent e) {

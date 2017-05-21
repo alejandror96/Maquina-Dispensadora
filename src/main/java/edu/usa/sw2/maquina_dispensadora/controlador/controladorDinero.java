@@ -4,12 +4,23 @@ import edu.usa.sw2.maquina_dispensadora.vista.VentanaUsuarioComprador;
 
 public class controladorDinero {
 	
-	VentanaUsuarioComprador ventanaComprador = new VentanaUsuarioComprador();
+	int dineroIngresado;
 	
-	public boolean confirmarDineroIngresado(){
-		
-		boolean confirmacion = true;
-		
-		return confirmacion;
+	public int getDineroIngresado() {
+		return dineroIngresado;
+	}
+
+	public void setDineroIngresado(int dineroIngresado) {
+		this.dineroIngresado = dineroIngresado;
+	}
+
+	VentanaUsuarioComprador ventanaComprador;
+
+	public VentanaUsuarioComprador getVentanaComprador() {
+		return ventanaComprador;
+	}
+
+	public void setVentanaComprador(VentanaUsuarioComprador ventanaComprador) {
+		this.ventanaComprador = ventanaComprador;
 	}
 }

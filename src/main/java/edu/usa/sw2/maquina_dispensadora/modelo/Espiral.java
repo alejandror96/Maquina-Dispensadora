@@ -1,6 +1,6 @@
 package edu.usa.sw2.maquina_dispensadora.modelo;
 
-public class espiral {
+public class Espiral {
 
 	String codigo;
 	String nombreProducto;

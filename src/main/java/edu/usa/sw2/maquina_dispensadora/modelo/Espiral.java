@@ -2,6 +2,7 @@ package edu.usa.sw2.maquina_dispensadora.modelo;
 
 public class Espiral {
 
+	boolean estado=false;
 	String codigo;
 	String nombreProducto;
 	int precioProducto;
@@ -32,5 +33,10 @@ public class Espiral {
 		this.capacidad = capacidad;
 	} 
 	
-	
+	public boolean isEstado() {
+		return estado;
+	}
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
 }

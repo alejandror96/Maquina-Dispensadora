@@ -15,6 +15,7 @@ public class administradorEspirales  {
 	
 	public administradorEspirales() {
 	    espiral= new Espiral();
+	    
 	}
 	public  String conseguirEspiral (){
 		if(dispensador.recibirCodigo()==espiral.codigo){

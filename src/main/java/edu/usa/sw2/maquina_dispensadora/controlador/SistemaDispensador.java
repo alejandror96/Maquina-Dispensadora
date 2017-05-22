@@ -1,4 +1,6 @@
-package edu.usa.sw2.maquina_dispensadora.modelo;
+package edu.usa.sw2.maquina_dispensadora.controlador;
+
+import java.util.ArrayList;
 
 public class SistemaDispensador {
 
@@ -16,5 +18,12 @@ public class SistemaDispensador {
 	}
 	public void setSaldo(int saldo) {
 		this.saldo = saldo;
+	}
+	public String recibirCodigo(){
+		
+		return null;
+	}
+	public ArrayList<String> mostrarInformacion(){
+		return null;
 	}
 }

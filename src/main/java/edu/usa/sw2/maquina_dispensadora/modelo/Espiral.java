@@ -9,6 +9,7 @@ public class Espiral {
 	String nombreProducto;
 	int precioProducto;
 	int capacidad;
+	ArrayList<String> informacion= new ArrayList<String>();
 	
 	public String getCodigo() {
 		return codigo;
@@ -41,8 +42,8 @@ public class Espiral {
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
-	public ArrayList enviarInformacionProducto(String nombre, String precio){
-		ArrayList<String> informacion= new ArrayList<String>();
+	public ArrayList<String> enviarInformacionProducto(String nombre, String precio){
+		
 		informacion.add(precio);
 		informacion.add(nombre);
 		

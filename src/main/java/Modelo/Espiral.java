@@ -2,6 +2,7 @@ package Modelo;
 
 public class Espiral {
 	
+	int cualquiercosa;
 	String codigo;
 	String producto;
 	int cantidad;
@@ -29,7 +30,7 @@ public class Espiral {
 		return precioProducto;
 	}
 	public void setPrecioProducto(int precioProducto) {
-		System.out.println("Prueba aleja! :)");
+		System.out.println(codigo);
 		this.precioProducto = precioProducto;
 	}
 }

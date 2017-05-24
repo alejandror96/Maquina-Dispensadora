@@ -33,4 +33,6 @@ public class Espiral {
 		System.out.println("Prueba aleja! :)");
 		this.precioProducto = precioProducto;
 	}
+	
+	system.out.printasas();
 }

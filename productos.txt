@@ -1,0 +1,9 @@
+a1,papas,2000
+a2,jugo,1000
+a3,bombombum,3000
+b1,chocolatina,500
+b2,chicles,200
+b3,gomitas,1300
+c1,gaseosa,2000
+c2,agua,2000
+c3,mani,1700

@@ -1,4 +1,4 @@
-package edu.usa.sw2.maquina_dispensadora;
+package co.edu.usa.ingesoft.maquina_productos;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

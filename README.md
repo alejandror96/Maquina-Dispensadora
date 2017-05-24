@@ -1,2 +1,0 @@
-# maquina-dispensadora
-# maquina-dispensadora

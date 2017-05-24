@@ -29,6 +29,7 @@ public class Espiral {
 		return precioProducto;
 	}
 	public void setPrecioProducto(int precioProducto) {
+		System.out.println("Prueba aleja! :)");
 		this.precioProducto = precioProducto;
 	}
 	

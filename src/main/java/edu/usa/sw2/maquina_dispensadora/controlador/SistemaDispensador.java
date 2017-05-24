@@ -26,4 +26,17 @@ public class SistemaDispensador {
 	public ArrayList<String> mostrarInformacion(){
 		return null;
 	}
+	public int recibirDineroCliente(){ //alejandra
+		
+		return saldo;
+		
+	}
+	public Boolean validarSiExisteSaldo(){ //alejandra
+		return estado;
+		
+	}
+	public void cancelarUnaCompra(){ //alejandra
+		
+	}
+	
 }

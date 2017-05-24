@@ -50,4 +50,13 @@ public class administradorEspirales  {
 		} 
 
 		}
+	
+	public Boolean validarEspiralIngresada(){ //alejandra
+		return null;
+		
+	}
+	
+	public void accionarEspiralPorCompra(){ //alejadnra
+		
+	}
 }

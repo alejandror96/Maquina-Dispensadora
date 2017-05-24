@@ -31,4 +31,6 @@ public class Espiral {
 	public void setPrecioProducto(int precioProducto) {
 		this.precioProducto = precioProducto;
 	}
+	
+	system.out.printasas();
 }

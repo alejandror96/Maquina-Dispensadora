@@ -15,12 +15,24 @@ public class SistemaDispensador {
 	
 	public SistemaDispensador(){
 		super();
+		int opcionUsuario= JOptionPane.showConfirmDialog(null, "Quiere usted realizar una compra?");
+		if(opcionUsuario==JOptionPane.YES_OPTION){
+			metodosUsuarioComprador();
+		}else{
+			metodosUsuarioAdministrador();
+		}
+		
+	}
+	public void metodosUsuarioComprador(){
 		verificarEspiralExistente();
 		enviarCodigoIngresado(codigoIngresado);
 		verificarEspiralSeleccionado();
 		mostrarNombreYPrecioDeProducto();
 		hacerConteoDelDineroIngresado();
 		calcularCambio(saldo);
+	}
+	public void metodosUsuarioAdministrador(){
+		
 	}
 	public void calcularCambio(int saldoIngresado){
 		controladorDeEspirales.calcularCambio(saldoIngresado);

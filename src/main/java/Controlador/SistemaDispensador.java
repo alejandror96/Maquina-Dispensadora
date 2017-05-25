@@ -14,13 +14,8 @@ public class SistemaDispensador {
 		super();
 		verificarEspiralExistente();
 		hacerConteoDelDineroIngresado();
-		sldlskd();
 	}
-	
-	private void sldlskd() {
-		controladorDeEspirales.algo();
-		
-	}
+
 
 	public boolean verificarEspiralExistente() {
 		Boolean auxiliarVerificacionEspiral = false;	

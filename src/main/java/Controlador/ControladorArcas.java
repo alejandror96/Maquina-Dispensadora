@@ -8,12 +8,8 @@ public class ControladorArcas {
 	
 	AdministradorArcas administradorDeArcas = new AdministradorArcas();
 	
-	public void crearArcas(){
-		
-	}
-
-	public void obtenerArca(int saldo) throws IOException {
-		administradorDeArcas.obtenerArca(saldo);
+	public String obtenerArca(int saldo) throws IOException {
+		return administradorDeArcas.obtenerArca(saldo);
 		
 	}
 }

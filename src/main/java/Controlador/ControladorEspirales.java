@@ -21,4 +21,8 @@ public class ControladorEspirales{
 	public void mostrarPrecioYNombreDeProducto(){
 		administradorDeEspirales.mostrarPrecioYNombreDeProducto();
 	}
+
+	public void confirmarCompra(int saldoIngresado) {
+		administradorDeEspirales.confirmarCompra(saldoIngresado);
+	}
 }

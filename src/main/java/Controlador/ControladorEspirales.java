@@ -10,10 +10,6 @@ public class ControladorEspirales{
 		administradorDeEspirales.mostrarInformacionProducto();
 	}
 	
-	public String enviarCodigoIngresado(){
-		return informarCodigoIngresado();
-	}
-	
 	public String mostrarEspirales(){
 		return administradorDeEspirales.mostrarEspirales();
 	}

@@ -45,7 +45,7 @@ public class AdministradorEspirales {
 		datosEspiral.setCantidad(Integer.parseInt(informacionEspirales[2]));
 		datosEspiral.setPrecioProducto(Integer.parseInt(informacionEspirales[3]));*/
 		
-		System.out.println(controladorEspiral.enviarCodigoIngresado());
+		//System.out.println(controladorEspiral.enviarCodigoIngresado());
 		
 		/*for (int i = 0; i < informacionEspirales.length; i++) {
 			System.out.println("lkasjd: "+informacionEspirales[i]);

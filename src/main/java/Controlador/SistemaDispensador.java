@@ -22,10 +22,6 @@ public class SistemaDispensador {
 		controladorDeEspirales.informacionProducto();
 		
 	}
-
-	public String informarCodigoIngresado(){
-		return controladorVentanaComprador.mostrarCodigoIngresado();
-	}
 	
 	public boolean verificarEspiralExistente() {
 		Boolean auxiliarVerificacionEspiral = false;	

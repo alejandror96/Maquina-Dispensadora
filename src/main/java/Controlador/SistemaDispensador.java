@@ -108,7 +108,7 @@ public class SistemaDispensador {
 		return auxiliarConteoDinero;
 	}
 
-	private void cancelarCompra(int auxiliarConteoDinero) {
+	public void cancelarCompra(int auxiliarConteoDinero) {
 		controladorDeEspirales.cancelarCompra(auxiliarConteoDinero);
 	}
 	

@@ -34,6 +34,7 @@ public class AdministradorEspirales {
 		JOptionPane.showMessageDialog(null, auxiliarParaMostrar);
 		return auxiliarParaMostrar;
 	}
+<<<<<<< HEAD
 	
 	public void mostrarInformacionProducto(){
 		
@@ -55,4 +56,11 @@ public class AdministradorEspirales {
 		
 	}
 	
+=======
+
+	public void verificarCantidad(String codigo) {
+		
+		JOptionPane.showMessageDialog(null, "Algo"+codigo);
+	}
+>>>>>>> da98d6ab1674cfdf9957c493765b3f66f5967683
 }

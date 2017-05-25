@@ -6,6 +6,10 @@ public class ControladorEspirales{
 
 	AdministradorEspirales administradorDeEspirales = new AdministradorEspirales();
 	
+	public void validarSaldoProductoDisponible(String codigo){
+		administradorDeEspirales.verificarCantidad(codigo);
+	}
+	
 	public String mostrarEspirales(){
 		return administradorDeEspirales.mostrarEspirales();
 	}

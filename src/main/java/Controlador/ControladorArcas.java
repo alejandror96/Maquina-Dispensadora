@@ -8,5 +8,10 @@ public class ControladorArcas {
 		sistemaDispensador = new SistemaDispensador();
 		return sistemaDispensador.recibirDineroIngresado();
 	}
+	
+	public int asignarPieza(){
+		return 0;
+		
+	}
 
 }

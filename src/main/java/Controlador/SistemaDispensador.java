@@ -13,12 +13,21 @@ public class SistemaDispensador {
 	public SistemaDispensador(){
 		super();
 		verificarEspiralExistente();
+		mostrarInformacionProducto();
 		hacerConteoDelDineroIngresado();
 		confirmarCompra();
 	}
 	
+	private void mostrarInformacionProducto() {
+		controladorDeEspirales.informacionProducto();
+		
+	}
+
+	public String informarCodigoIngresado(){
+		return controladorVentanaComprador.mostrarCodigoIngresado();
+	}
 	
-	private boolean verificarEspiralExistente() {
+	public boolean verificarEspiralExistente() {
 		Boolean auxiliarVerificacionEspiral = false;	
 		while(auxiliarVerificacionEspiral == false){		
 			if (controladorDeEspirales.mostrarEspirales().contains(recibirCodigoIngresado()+",")){
@@ -31,11 +40,12 @@ public class SistemaDispensador {
 		return auxiliarVerificacionEspiral;
 	}
 
-	private void confirmarCompra() {
-		controladorDeEspirales.informacionEspirales();
+	public void confirmarCompra() {
+		controladorDeEspirales.informacionProducto();
 	}
 
-	private int hacerConteoDelDineroIngresado() {
+	public int hacerConteoDelDineroIngresado() {
+		
 		int auxiliarConteoDinero = 0;
 		String auxiliarMenu = "1";
 		while(auxiliarMenu.equals("1")){
@@ -51,7 +61,7 @@ public class SistemaDispensador {
 		return controladorVentanaComprador.mostrarDineroIngresado();
 	}
 
-	private String recibirCodigoIngresado() {
+	public String recibirCodigoIngresado() {
 		return controladorVentanaComprador.mostrarCodigoIngresado();
 		
 	}

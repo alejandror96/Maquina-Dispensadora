@@ -23,7 +23,7 @@ public class SistemaDispensador {
 			if (controladorDeEspirales.mostrarEspirales().contains(recibirCodigoIngresado()+",")){
 				auxiliarVerificacionEspiral = true;
 			}else{
-				JOptionPane.showMessageDialog(null, "El código ingresado no exisite", "Error", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "El código ingresado no existe", "Error", JOptionPane.ERROR_MESSAGE);
 				auxiliarVerificacionEspiral = false;
 			}
 		}

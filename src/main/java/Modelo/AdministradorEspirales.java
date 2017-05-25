@@ -32,8 +32,10 @@ public class AdministradorEspirales {
 		return auxiliarParaMostrar;
 	}
 	
-	/*public String separarLinea(){
+	public String[] separarLinea(){
 		mostrarEspirales();
-		return "";
-	}*/
+		String[] informacionEspirales = mostrarEspirales().split(",");
+		datosEspiral.setCodigo(informacionEspirales[0]);
+		return informacionEspirales;
+	}
 }

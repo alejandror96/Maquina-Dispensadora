@@ -19,15 +19,11 @@ public class SistemaDispensador {
 		enviarCodigoIngresado(codigoIngresado);
 		mostrarNombreYPrecioDeProducto();
 		hacerConteoDelDineroIngresado();
-<<<<<<< HEAD
-		rechazarCompra(saldoIngresado);
-		calcularCambio(saldoIngresado);
+		calcularCambio(saldo);
 	}
 	public void calcularCambio(int saldoIngresado){
 		controladorDeEspirales.calcularCambio(saldoIngresado);
-=======
->>>>>>> e8ce733fa3ded1473b2ac79491465b318febf8af
-	}
+}
 
 	public void confirmarCompra(int saldoIngresado) {
 		controladorDeEspirales.confirmarCompra(saldoIngresado);
@@ -78,6 +74,7 @@ public class SistemaDispensador {
 	}
 
 	public int recibirDineroIngresado() {
+		saldo=controladorVentanaComprador.mostrarDineroIngresado();
 		return controladorVentanaComprador.mostrarDineroIngresado();
 	}
 

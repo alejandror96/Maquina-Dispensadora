@@ -96,7 +96,7 @@ public class AdministradorEspirales {
 		}		
 	}
 
-<<<<<<< HEAD
+
 	public void calcularCambio(int saldoIngresado) {
 		int cambio; 
 		cambio= espiral.getPrecioProducto()-saldoIngresado;
@@ -105,10 +105,8 @@ public class AdministradorEspirales {
 			JOptionPane.showMessageDialog(null, "compra exitosa");
 		}else 
 	JOptionPane.showMessageDialog(null, "Su cambio es de: "+cambio);
-=======
+	}
 	public void cancelarCompra(int auxiliarConteoDinero) {
-		// TODO Auto-generated method stub
-		
->>>>>>> 3b48a7bfeb883395c41748584fc70579466004d6
+	
 	}
 }

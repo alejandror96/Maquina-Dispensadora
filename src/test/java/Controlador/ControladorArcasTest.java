@@ -1,5 +1,11 @@
 package Controlador;
 
+import static org.junit.Assert.*;
+
+import java.io.IOException;
+
+import org.junit.Before;
+import org.junit.Test;
 
 
 public class ControladorArcasTest {
@@ -11,5 +17,9 @@ public class ControladorArcasTest {
 		controladorDeArcas = new ControladorArcas();
 	}
 	
+	@Test
+	public void debeDarErrorSiEntrada0() throws IOException{
+		assertEquals("", controladorDeArcas.obtenerArca(0));
+	}
 
 }

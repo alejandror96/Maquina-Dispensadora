@@ -83,8 +83,8 @@ public class SistemaDispensador {
 		return codigoIngresado;
 	}
 	
-	public Boolean verificarEspiralSeleccionado(){
-		return controladorDeEspirales.verificarEspiralSeleccionada();
+	public void verificarEspiralSeleccionado(){
+		 controladorDeEspirales.verificarEspiralSeleccionada();
 	}
 
 	public static void main(String[] args) {

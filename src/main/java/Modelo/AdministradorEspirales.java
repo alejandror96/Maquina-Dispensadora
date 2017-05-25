@@ -78,7 +78,7 @@ public class AdministradorEspirales {
 		JOptionPane.showMessageDialog(null, "Nombre: "+espiral.getProducto()+ " Precio: " + espiral.getPrecioProducto());
 	}
 	
-	public Boolean verificarContenidoEnEspiral() {
+	public boolean verificarContenidoEnEspiral() {
 		if (espiral.getCantidad()>=1){
 			System.out.println(espiral.getCantidad());
 			return true;

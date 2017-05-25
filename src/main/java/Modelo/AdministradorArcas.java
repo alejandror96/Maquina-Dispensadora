@@ -5,18 +5,15 @@ import Controlador.ControladorArcas;
 public class AdministradorArcas {
 	
 	ControladorArcas controladorArcas = new ControladorArcas();
+	Arca arca = new Arca();
 	
-	public int obtenerArca{
-		controladorArcas.recibirDineroIngresado();
-	}
-	
-	
-	
-	public int asignarPiezaAlArca(){
+	public int obtenerArca() {
+		if (controladorArcas.recibirDineroIngresado()==arca.getDenominacion()){
+			return arca.getIdArca();
+		}
+		return arca.getIdArca();
 		
-		
-		return controladorEspirales;
-		
-	}
+		}
+	
 
 }

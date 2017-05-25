@@ -88,8 +88,7 @@ public class AdministradorEspirales {
 		}
 	}
 	
-	public void confirmarCompra(int saldoIngresado) {
-		
+	public void confirmarCompra(int saldoIngresado) {	
 		if((saldoIngresado >= espiral.getPrecioProducto()) && (verificarContenidoEnEspiral() == true) && (1==1)){
 			calcularCambio(saldoIngresado);
 			JOptionPane.showMessageDialog(null, "Retire su producto de la máquina");

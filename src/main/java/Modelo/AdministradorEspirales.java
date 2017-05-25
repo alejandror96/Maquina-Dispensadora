@@ -31,8 +31,14 @@ public class AdministradorEspirales {
 		JOptionPane.showMessageDialog(null, auxiliarParaMostrar);
 		return auxiliarParaMostrar;
 	}
-	
-	public void separarLinea(){
+	public String informacionDelProducto (){
+		mostrarEspirales(); 
+		separarLinea();
+		
+		return null;
+		
+	}
+	public String[] separarLinea(){
 		mostrarEspirales();
 		String[] informacionEspirales = new String[4];
 		informacionEspirales = mostrarEspirales().split(",");
@@ -46,5 +52,6 @@ public class AdministradorEspirales {
 		/*for (int i = 0; i < informacionEspirales.length; i++) {
 			System.out.println("lkasjd: "+informacionEspirales[i]);
 		}*/
+		return informacionEspirales;
 	}
 }

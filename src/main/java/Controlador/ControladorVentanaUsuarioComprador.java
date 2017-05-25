@@ -15,4 +15,5 @@ public class ControladorVentanaUsuarioComprador {
 		ventanaComprador = new VentanaUsuarioComprador();
 		return ventanaComprador.recibirDinero();
 	}
+	
 }

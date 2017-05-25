@@ -4,6 +4,7 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 import Controlador.ControladorEspirales;
+import Controlador.SistemaDispensador;
 
 public class AdministradorEspirales {
 	
@@ -81,7 +82,12 @@ public class AdministradorEspirales {
 	public boolean verificarContenidoEnEspiral() {
 		if (espiral.getCantidad() < 1){
 			System.out.println(espiral.getCantidad());
-			JOptionPane.showMessageDialog(null, "No hay existencias del producto");
+			int opcionCliente;
+			opcionCliente=JOptionPane.showConfirmDialog(null, "No hay existencias del producto. ¿Desea hacer otra compra?");
+			if (opcionCliente== JOptionPane.YES_OPTION) {
+				SistemaDispensador sistemaDispensador =new SistemaDispensador();
+			}else
+				System.exit(0);
 			return false;
 		}else{
 			return true;
@@ -91,6 +97,8 @@ public class AdministradorEspirales {
 	public void confirmarCompra(int saldoIngresado) {
 		
 		if((saldoIngresado >= espiral.getPrecioProducto()) && (verificarContenidoEnEspiral() == true) && (1==1)){
+			int cantidadActual=espiral.getCantidad();
+			espiral.setCantidad(cantidadActual-1);
 			JOptionPane.showMessageDialog(null, "Retire su producto de la máquina");
 		}else{
 			cancelarCompra(saldoIngresado);

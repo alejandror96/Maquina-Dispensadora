@@ -31,8 +31,6 @@ public class SistemaDispensador {
 	}
 
 	private void confirmarCompra() {
-		
-		
 		JOptionPane.showMessageDialog(null, "Aqui se confirma la compra");
 	}
 

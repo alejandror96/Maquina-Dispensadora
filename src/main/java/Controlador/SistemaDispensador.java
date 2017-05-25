@@ -19,14 +19,6 @@ public class SistemaDispensador {
 		enviarCodigoIngresado(codigoIngresado);
 		mostrarNombreYPrecioDeProducto();
 		hacerConteoDelDineroIngresado();
-<<<<<<< HEAD
-		rechazarCompra(saldoIngresado);
-		calcularCambio(saldoIngresado);
-	}
-	public void calcularCambio(int saldoIngresado){
-		controladorDeEspirales.calcularCambio(saldoIngresado);
-=======
->>>>>>> e8ce733fa3ded1473b2ac79491465b318febf8af
 	}
 
 	public void confirmarCompra(int saldoIngresado) {
@@ -86,10 +78,8 @@ public class SistemaDispensador {
 		return codigoIngresado;
 	}
 	
-	public void verificarEspiralSeleccionado(){
-		if (controladorDeEspirales.verificarEspiralSeleccionada()==false){
-			JOptionPane.showMessageDialog(null, "El producto seleccionado no posee existencias.");
-		}
+	public Boolean verificarEspiralSeleccionado(){
+		return controladorDeEspirales.verificarEspiralSeleccionada();
 	}
 
 	public static void main(String[] args) {

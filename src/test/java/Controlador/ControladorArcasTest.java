@@ -2,13 +2,15 @@ package Controlador;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
+
 import org.junit.Before;
 import org.junit.Test;
+
 
 public class ControladorArcasTest {
 	
 	ControladorArcas controladorDeArcas;
-	int entradaSaldo;
 	
 	@Before
 	public void SetUp(){
@@ -16,13 +18,8 @@ public class ControladorArcasTest {
 	}
 	
 	@Test
-	public void debeDarErrorSiEntrada5(){
-		assertEquals("", 5);
-	}
-	
-	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void debeDarErrorSiEntrada0() throws IOException{
+		assertEquals("", controladorDeArcas.obtenerArca(0));
 	}
 
 }

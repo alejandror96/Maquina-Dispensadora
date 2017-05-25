@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
-import Controlador.ControladorEspirales;
 import Controlador.SistemaDispensador;
 
 public class AdministradorEspirales {

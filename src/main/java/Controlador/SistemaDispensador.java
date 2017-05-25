@@ -46,7 +46,7 @@ public class SistemaDispensador {
 		return auxiliarConteoDinero;
 	}
 
-	private int recibirDineroIngresado() {
+	public int recibirDineroIngresado() {
 		controladorVentanaComprador = new ControladorVentanaUsuarioComprador();
 		return controladorVentanaComprador.mostrarDineroIngresado();
 	}

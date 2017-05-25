@@ -34,7 +34,6 @@ public class AdministradorEspirales {
 		JOptionPane.showMessageDialog(null, auxiliarParaMostrar);
 		return auxiliarParaMostrar;
 	}
-<<<<<<< HEAD
 	
 	public void mostrarInformacionProducto(){
 		
@@ -55,12 +54,40 @@ public class AdministradorEspirales {
 		return auxiliarVerificacionContenidoEspiral;
 		
 	}
-	
-=======
 
-	public void verificarCantidad(String codigo) {
-		
-		JOptionPane.showMessageDialog(null, "Algo"+codigo);
+	String auxiliarLinea = "";
+	public void conocerLineaDondeEstaElProducto(String codigo) {
+		File fichero = new File("productos.txt");
+		Scanner s = null;
+		try {
+			s = new Scanner(fichero);
+			while (s.hasNextLine()) {
+				String linea = s.nextLine();
+				if (linea.contains(codigo)){
+					auxiliarLinea = linea;	
+				}
+			}
+		} catch (Exception ex) {
+			System.out.println("Mensaje: " + ex.getMessage());
+		} finally {
+			try {
+				if (s != null)
+					s.close();
+			} catch (Exception ex2) {
+				System.out.println("Mensaje 2: " + ex2.getMessage());
+			}
+		}
+		JOptionPane.showMessageDialog(null, "Algo"+auxiliarLinea);
+		darValoresAEspiral();
 	}
->>>>>>> da98d6ab1674cfdf9957c493765b3f66f5967683
+	
+	public void darValoresAEspiral(){
+		String[] datosEspiral= auxiliarLinea.split(",");
+		espiral.setCodigo(datosEspiral[0]);
+		espiral.setProducto(datosEspiral[1]);
+		espiral.setCantidad(Integer.parseInt(datosEspiral[2]));
+		espiral.setPrecioProducto(Integer.parseInt(datosEspiral[3]));
+		JOptionPane.showMessageDialog(null, "Producto"+espiral.getCantidad());
+	}
+
 }

@@ -85,11 +85,8 @@ public class AdministradorEspirales {
 		JOptionPane.showMessageDialog(null, "El producto seleccionado no posee existencias.");
 		return false;
 	}
-
-	public int obtenerSaldoIngresado(int saldoIngresado) {
+	
+	public int rechazarCompra(int saldoIngresado) {
 		return saldoIngresado;		
 	}
-	
-
-	
 }

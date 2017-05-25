@@ -20,11 +20,11 @@ public class SistemaDispensador {
 		enviarCodigoIngresado(codigoIngresado);
 		mostrarNombreYPrecioDeProducto();
 		hacerConteoDelDineroIngresado();
-		enviarSaldoIngresado(saldoIngresado);
+		rechazarCompra(saldoIngresado);
 	}
 
-	private void enviarSaldoIngresado(int saldoIngresado) {
-		controladorDeEspirales.eniarSaldoIngresado(saldoIngresado);
+	private void rechazarCompra(int saldoIngresado) {
+		controladorDeEspirales.rechazarCompra(saldoIngresado);
 	}
 
 	private void mostrarNombreYPrecioDeProducto() {

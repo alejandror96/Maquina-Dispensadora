@@ -22,7 +22,7 @@ public class ControladorEspirales{
 		administradorDeEspirales.mostrarPrecioYNombreDeProducto();
 	}
 
-	public void eniarSaldoIngresado(int saldoIngresado) {
-		administradorDeEspirales.obtenerSaldoIngresado(saldoIngresado);
+	public void rechazarCompra(int saldoIngresado) {
+		administradorDeEspirales.rechazarCompra(saldoIngresado);
 	}
 }

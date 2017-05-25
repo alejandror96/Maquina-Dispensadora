@@ -26,16 +26,13 @@ public class ControladorEspirales{
 		administradorDeEspirales.confirmarCompra(saldoIngresado);
 	}
 
-<<<<<<< HEAD
 	public void calcularCambio(int saldoIngresado) {
 		administradorDeEspirales.calcularCambio(saldoIngresado);
 		
 	}
-	
-=======
+
 	public void cancelarCompra(int auxiliarConteoDinero) {
 		administradorDeEspirales.cancelarCompra(auxiliarConteoDinero);
 		
 	}
->>>>>>> 3b48a7bfeb883395c41748584fc70579466004d6
 }

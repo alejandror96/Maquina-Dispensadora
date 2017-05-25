@@ -11,15 +11,16 @@ import org.junit.Test;
 public class AdministradorArcasTest {
 
 	AdministradorArcas administradorArcas;
-	
-	@Before
-	public void SetUp(){
-		administradorArcas = new AdministradorArcas();
+	@Before 
+	public void setUp(){
+		administradorArcas= new AdministradorArcas();
 	}
 	
 	@Test
-	public void algo() throws IOException {
-		assertEquals("",administradorArcas.obtenerArca(0));
+	public void deberiaDarCadaArca() throws IOException {
+		assertEquals("5,1000,14,50",administradorArcas.obtenerArca(1000));
+
 	}
+
 
 }

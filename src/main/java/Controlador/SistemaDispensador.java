@@ -17,7 +17,12 @@ public class SistemaDispensador {
 		super();
 		verificarEspiralExistente();
 		enviarCodigoIngresado(codigoIngresado);
+		mostrarNombreYPrecioDeProducto();
 		hacerConteoDelDineroIngresado();
+	}
+
+	private void mostrarNombreYPrecioDeProducto() {
+		controladorDeEspirales.mostrarPrecioYNombreDeProducto();
 	}
 
 	private void enviarCodigoIngresado(String codigo) {
@@ -61,7 +66,6 @@ public class SistemaDispensador {
 	public String recibirCodigoIngresado() {
 		codigoIngresado = controladorVentanaComprador.mostrarCodigoIngresado();
 		return codigoIngresado;
-		
 	}
 
 	public static void main(String[] args) {

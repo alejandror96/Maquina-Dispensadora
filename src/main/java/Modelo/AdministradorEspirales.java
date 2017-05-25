@@ -100,6 +100,7 @@ public class AdministradorEspirales {
 			//int cantidadActual=espiral.getCantidad();
 			//espiral.setCantidad(cantidadActual-1);
 			JOptionPane.showMessageDialog(null, "Retire su producto de la máquina");
+			System.exit(0); 
 		}else{
 			cancelarCompra(saldoIngresado);
 		}		

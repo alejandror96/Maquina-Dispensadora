@@ -61,10 +61,9 @@ public class SistemaDispensador {
 			auxiliarMenu = JOptionPane.showInputDialog("1. Ingresar dinero 2.Confirmar compra \nOtro. Cancelar Compra");	
 			if(auxiliarMenu!="2"){
 				confirmarCompra(auxiliarConteoDinero);
+			}else if(auxiliarMenu != "1" || auxiliarMenu != "2"){
+				cancelarCompra(auxiliarConteoDinero);
 			}
-		}
-		if(auxiliarMenu != "1" || auxiliarMenu != "2"){
-			cancelarCompra(auxiliarConteoDinero);
 		}
 		return auxiliarConteoDinero;
 	}

@@ -32,10 +32,19 @@ public class AdministradorEspirales {
 		return auxiliarParaMostrar;
 	}
 	
-	public String[] separarLinea(){
+	public void separarLinea(){
 		mostrarEspirales();
-		String[] informacionEspirales = mostrarEspirales().split(",");
-		datosEspiral.setCodigo(informacionEspirales[0]);
-		return informacionEspirales;
+		String[] informacionEspirales = new String[4];
+		informacionEspirales = mostrarEspirales().split(",");
+		/*datosEspiral.setCodigo(informacionEspirales[0]);
+		datosEspiral.setProducto(informacionEspirales[1]);
+		datosEspiral.setCantidad(Integer.parseInt(informacionEspirales[2]));
+		datosEspiral.setPrecioProducto(Integer.parseInt(informacionEspirales[3]));*/
+		
+		System.out.println(mostrarEspirales());
+		
+		/*for (int i = 0; i < informacionEspirales.length; i++) {
+			System.out.println("lkasjd: "+informacionEspirales[i]);
+		}*/
 	}
 }

@@ -17,6 +17,7 @@ public class SistemaDispensador {
 		confirmarCompra();
 	}
 	
+	
 	private boolean verificarEspiralExistente() {
 		Boolean auxiliarVerificacionEspiral = false;	
 		while(auxiliarVerificacionEspiral == false){		
@@ -31,7 +32,7 @@ public class SistemaDispensador {
 	}
 
 	private void confirmarCompra() {
-		JOptionPane.showMessageDialog(null, "Aqui se confirma la compra");
+		controladorDeEspirales.informacionEspirales();
 	}
 
 	private int hacerConteoDelDineroIngresado() {

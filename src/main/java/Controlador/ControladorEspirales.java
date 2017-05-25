@@ -6,7 +6,12 @@ public class ControladorEspirales {
 	
 	AdministradorEspirales administradorDeEspirales = new AdministradorEspirales();
 	
+	
 	public String mostrarEspirales(){
 		return administradorDeEspirales.mostrarEspirales();
+	}
+	
+	public void informacionEspirales(){
+		administradorDeEspirales.separarLinea();
 	}
 }

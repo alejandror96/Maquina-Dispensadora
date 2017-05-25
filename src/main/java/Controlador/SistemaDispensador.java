@@ -74,8 +74,8 @@ public class SistemaDispensador {
 	}
 
 	public int recibirDineroIngresado() {
-		saldo=controladorVentanaComprador.mostrarDineroIngresado();
-		return controladorVentanaComprador.mostrarDineroIngresado();
+		saldo = controladorVentanaComprador.mostrarDineroIngresado();
+		return saldo;
 	}
 
 	public String recibirCodigoIngresado() {

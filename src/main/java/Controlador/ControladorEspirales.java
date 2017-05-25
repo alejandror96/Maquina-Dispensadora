@@ -14,8 +14,8 @@ public class ControladorEspirales{
 		return administradorDeEspirales.mostrarEspirales();
 	}
 	
-	public boolean verificarEspiralSeleccionada(){
-		return administradorDeEspirales.verificarContenidoEnEspiral();
+	public void verificarEspiralSeleccionada(){
+		 administradorDeEspirales.verificarContenidoEnEspiral();
 	}
 	
 	public void mostrarPrecioYNombreDeProducto(){

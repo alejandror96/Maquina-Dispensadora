@@ -3,6 +3,8 @@ import java.io.File;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
+import Controlador.ControladorEspirales;
+
 public class AdministradorEspirales {
 	
 	int capacidadMaxima = 15;
@@ -31,6 +33,7 @@ public class AdministradorEspirales {
 		JOptionPane.showMessageDialog(null, auxiliarParaMostrar);
 		return auxiliarParaMostrar;
 	}
+<<<<<<< HEAD
 	public String informacionDelProducto (){
 		mostrarEspirales(); 
 		separarLinea();
@@ -42,16 +45,30 @@ public class AdministradorEspirales {
 		mostrarEspirales();
 		String[] informacionEspirales = new String[4];
 		informacionEspirales = mostrarEspirales().split(",");
+=======
+	
+	public void mostrarInformacionProducto(){
+		
+		ControladorEspirales controladorEspiral = new ControladorEspirales();
+		//mostrarEspirales();
+		//String[] informacionEspirales = new String[4];
+		//informacionEspirales = mostrarEspirales().split(",");
+>>>>>>> 0ead8b7f3b990a92f29e06738f1a4809fd03e561
 		/*datosEspiral.setCodigo(informacionEspirales[0]);
 		datosEspiral.setProducto(informacionEspirales[1]);
 		datosEspiral.setCantidad(Integer.parseInt(informacionEspirales[2]));
 		datosEspiral.setPrecioProducto(Integer.parseInt(informacionEspirales[3]));*/
 		
-		System.out.println(mostrarEspirales());
+		//System.out.println(controladorEspiral.enviarCodigoIngresado());
 		
 		/*for (int i = 0; i < informacionEspirales.length; i++) {
 			System.out.println("lkasjd: "+informacionEspirales[i]);
 		}*/
+<<<<<<< HEAD
 		return informacionEspirales;
+=======
+		
+		JOptionPane.showMessageDialog(null, "algo");
+>>>>>>> 0ead8b7f3b990a92f29e06738f1a4809fd03e561
 	}
 }

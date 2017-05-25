@@ -13,15 +13,11 @@ public class SistemaDispensador {
 	public SistemaDispensador(){
 		super();
 		verificarEspiralExistente();
-		mostrarInformacionProducto();
+		
 		hacerConteoDelDineroIngresado();
-		confirmarCompra();
+	
 	}
 	
-	private void mostrarInformacionProducto() {
-		controladorDeEspirales.informacionProducto();
-		
-	}
 	
 	public boolean verificarEspiralExistente() {
 		Boolean auxiliarVerificacionEspiral = false;	
@@ -36,9 +32,7 @@ public class SistemaDispensador {
 		return auxiliarVerificacionEspiral;
 	}
 
-	public void confirmarCompra() {
-		controladorDeEspirales.informacionProducto();
-	}
+	
 
 	public int hacerConteoDelDineroIngresado() {
 		

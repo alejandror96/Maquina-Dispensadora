@@ -33,45 +33,7 @@ public class AdministradorEspirales {
 		JOptionPane.showMessageDialog(null, auxiliarParaMostrar);
 		return auxiliarParaMostrar;
 	}
-<<<<<<< HEAD
-	public String informacionDelProducto (){
-		mostrarEspirales(); 
-		separarLinea();
-		
-		return null;
-		
-	}
-	public String[] separarLinea(){
-		mostrarEspirales();
-		String[] informacionEspirales = new String[4];
-		informacionEspirales = mostrarEspirales().split(",");
-=======
 	
-	public void mostrarInformacionProducto(){
-		
-		ControladorEspirales controladorEspiral = new ControladorEspirales();
-<<<<<<< HEAD
-		//mostrarEspirales();
-		//String[] informacionEspirales = new String[4];
-		//informacionEspirales = mostrarEspirales().split(",");
->>>>>>> 0ead8b7f3b990a92f29e06738f1a4809fd03e561
-		/*datosEspiral.setCodigo(informacionEspirales[0]);
-		datosEspiral.setProducto(informacionEspirales[1]);
-		datosEspiral.setCantidad(Integer.parseInt(informacionEspirales[2]));
-		datosEspiral.setPrecioProducto(Integer.parseInt(informacionEspirales[3]));*/
-		
-		//System.out.println(controladorEspiral.enviarCodigoIngresado());
-		
-		/*for (int i = 0; i < informacionEspirales.length; i++) {
-			System.out.println("lkasjd: "+informacionEspirales[i]);
-		}*/
-<<<<<<< HEAD
-		return informacionEspirales;
-=======
-=======
->>>>>>> 96e18f11c4ce4d40b848fa38868804a6906cf74e
-		
-		JOptionPane.showMessageDialog(null, "algo");
->>>>>>> 0ead8b7f3b990a92f29e06738f1a4809fd03e561
-	}
+
+	
 }

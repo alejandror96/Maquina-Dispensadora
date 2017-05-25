@@ -78,8 +78,10 @@ public class SistemaDispensador {
 		return codigoIngresado;
 	}
 	
-	public Boolean verificarEspiralSeleccionado(){
-		return controladorDeEspirales.verificarEspiralSeleccionada();
+	public void verificarEspiralSeleccionado(){
+		if (controladorDeEspirales.verificarEspiralSeleccionada()==false){
+			JOptionPane.showMessageDialog(null, "El producto seleccionado no posee existencias.");
+		}
 	}
 
 	public static void main(String[] args) {

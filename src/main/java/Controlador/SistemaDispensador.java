@@ -20,7 +20,18 @@ public class SistemaDispensador {
 	public SistemaDispensador() throws IOException{
 		super();
 
+
 		crearArcas();
+
+		int opcionUsuario= JOptionPane.showConfirmDialog(null, "Quiere usted realizar una compra?");
+		if(opcionUsuario==JOptionPane.YES_OPTION){
+			metodosUsuarioComprador();
+		}else{
+			metodosUsuarioAdministrador();
+		}
+		
+	}
+	public void metodosUsuarioComprador(){
 		verificarEspiralExistente();
 		enviarCodigoIngresado(codigoIngresado);
 		verificarEspiralSeleccionado();
@@ -32,6 +43,11 @@ public class SistemaDispensador {
 	
 	private void crearArcas() {
 		controladorDeArcas.crearArcas();
+	}
+
+
+	public void metodosUsuarioAdministrador(){
+		
 	}
 
 	public void calcularCambio(int saldoIngresado){

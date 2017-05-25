@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 import Vista.VentanaUsuarioComprador;
 
 public class SistemaDispensador {
+	
 
 	ControladorVentanaUsuarioComprador controladorVentanaComprador = new ControladorVentanaUsuarioComprador();
 	ControladorEspirales controladorDeEspirales = new ControladorEspirales();

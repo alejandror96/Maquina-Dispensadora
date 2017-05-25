@@ -3,6 +3,8 @@ import java.io.File;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
+import Controlador.ControladorEspirales;
+
 public class AdministradorEspirales {
 	
 	int capacidadMaxima = 15;
@@ -32,19 +34,10 @@ public class AdministradorEspirales {
 		return auxiliarParaMostrar;
 	}
 	
-	public void separarLinea(){
-		mostrarEspirales();
-		String[] informacionEspirales = new String[4];
-		informacionEspirales = mostrarEspirales().split(",");
-		/*datosEspiral.setCodigo(informacionEspirales[0]);
-		datosEspiral.setProducto(informacionEspirales[1]);
-		datosEspiral.setCantidad(Integer.parseInt(informacionEspirales[2]));
-		datosEspiral.setPrecioProducto(Integer.parseInt(informacionEspirales[3]));*/
+	public void mostrarInformacionProducto(){
 		
-		System.out.println(mostrarEspirales());
+		ControladorEspirales controladorEspiral = new ControladorEspirales();
 		
-		/*for (int i = 0; i < informacionEspirales.length; i++) {
-			System.out.println("lkasjd: "+informacionEspirales[i]);
-		}*/
+		JOptionPane.showMessageDialog(null, "algo");
 	}
 }

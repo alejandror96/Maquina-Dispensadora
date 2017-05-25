@@ -2,8 +2,8 @@ package Modelo;
 
 public class Arca {
 	
-	int cantidadAlmacenada;//3
-	int cantidadMaxima;//2
+	int cantidadAlmacenada;//2
+	int cantidadMaxima;//3
 	int idArca; //0
 	int denominacion; //1
 	

@@ -1,17 +1,19 @@
 package Controlador;
 
+import java.io.IOException;
+
+import Modelo.AdministradorArcas;
+
 public class ControladorArcas {
 	
-	SistemaDispensador sistemaDispensador = new SistemaDispensador();
+	AdministradorArcas administradorDeArcas = new AdministradorArcas();
 	
-	public int recibirDineroIngresado() {
-		sistemaDispensador = new SistemaDispensador();
-		return sistemaDispensador.recibirDineroIngresado();
-	}
-	
-	public int asignarPieza(){
-		return 0;
+	public void crearArcas(){
 		
 	}
 
+	public void obtenerArca(int saldo) throws IOException {
+		administradorDeArcas.obtenerArca(saldo);
+		
+	}
 }

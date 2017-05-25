@@ -12,6 +12,7 @@ public class ControladorVentanaUsuarioComprador {
 	
 	public int mostrarDineroIngresado() {
 		return ventanaComprador.recibirDinero();
+		
 	}
 
 	

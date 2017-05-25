@@ -42,6 +42,9 @@ public class SistemaDispensador {
 			auxiliarConteoDinero = auxiliarConteoDinero + recibirDineroIngresado();
 			JOptionPane.showMessageDialog(null, "Dinero ingresado hasta el momento: " + auxiliarConteoDinero);
 			auxiliarMenu = JOptionPane.showInputDialog("1. Ingresar dinero \nOtro. Continuar");	
+			if(auxiliarMenu!="1"){
+			JOptionPane.showMessageDialog(null,"Producto a comprar: "+controladorVentanaComprador.mostrarCodigoIngresado()); 
+			}
 		}
 		return auxiliarConteoDinero;
 	}

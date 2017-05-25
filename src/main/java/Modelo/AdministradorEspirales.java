@@ -33,7 +33,9 @@ public class AdministradorEspirales {
 		JOptionPane.showMessageDialog(null, auxiliarParaMostrar);
 		return auxiliarParaMostrar;
 	}
-	
 
-	
+	public void verificarCantidad(String codigo) {
+		
+		JOptionPane.showMessageDialog(null, "Algo"+codigo);
+	}
 }

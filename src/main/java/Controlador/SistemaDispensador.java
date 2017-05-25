@@ -2,6 +2,8 @@ package Controlador;
 
 import javax.swing.JOptionPane;
 
+import Vista.VentanaUsuarioComprador;
+
 public class SistemaDispensador {
 
 	ControladorVentanaUsuarioComprador controladorVentanaComprador = new ControladorVentanaUsuarioComprador();
@@ -9,11 +11,17 @@ public class SistemaDispensador {
 	
 	Boolean estado = true;
 	int saldo;
+	String codigoIngresado;
 	
 	public SistemaDispensador(){
 		super();
 		verificarEspiralExistente();
+		enviarCodigoIngresado(codigoIngresado);
 		hacerConteoDelDineroIngresado();
+	}
+
+	private void enviarCodigoIngresado(String codigo) {
+		controladorDeEspirales.validarSaldoProductoDisponible(codigo);
 	}
 
 
@@ -47,12 +55,12 @@ public class SistemaDispensador {
 	}
 
 	public int recibirDineroIngresado() {
-		controladorVentanaComprador = new ControladorVentanaUsuarioComprador();
 		return controladorVentanaComprador.mostrarDineroIngresado();
 	}
 
 	public String recibirCodigoIngresado() {
-		return controladorVentanaComprador.mostrarCodigoIngresado();
+		codigoIngresado = controladorVentanaComprador.mostrarCodigoIngresado();
+		return codigoIngresado;
 		
 	}
 

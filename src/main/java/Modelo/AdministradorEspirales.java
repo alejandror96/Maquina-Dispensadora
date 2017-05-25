@@ -95,11 +95,10 @@ public class AdministradorEspirales {
 	}
 	
 	public void confirmarCompra(int saldoIngresado) {
-		
 		if((saldoIngresado >= espiral.getPrecioProducto()) && (verificarContenidoEnEspiral() == true) && (1==1)){
 			calcularCambio(saldoIngresado);
-			int cantidadActual=espiral.getCantidad();
-			espiral.setCantidad(cantidadActual-1);
+			//int cantidadActual=espiral.getCantidad();
+			//espiral.setCantidad(cantidadActual-1);
 			JOptionPane.showMessageDialog(null, "Retire su producto de la máquina");
 		}else{
 			cancelarCompra(saldoIngresado);
@@ -111,7 +110,6 @@ public class AdministradorEspirales {
 		int cambio; 
 		cambio= saldoIngresado-espiral.getPrecioProducto();
 		if(espiral.getPrecioProducto()==saldoIngresado){
-			saldoIngresado=0;
 			JOptionPane.showMessageDialog(null, "compra exitosa");
 		}else 
 	JOptionPane.showMessageDialog(null, "Su cambio es de: "+cambio);

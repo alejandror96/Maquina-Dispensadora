@@ -1,20 +1,38 @@
 package Controlador;
 
+import java.awt.HeadlessException;
+import java.io.IOException;
+
 import javax.swing.JOptionPane;
 
-import Vista.VentanaUsuarioComprador;
 
 public class SistemaDispensador {
-	
+	ControladorVentanaUsuarioAdministrador controladorVentanaAdministrador = new ControladorVentanaUsuarioAdministrador();	
 	ControladorVentanaUsuarioComprador controladorVentanaComprador = new ControladorVentanaUsuarioComprador();
 	ControladorEspirales controladorDeEspirales = new ControladorEspirales();
+	ControladorArcas controladorDeArcas = new ControladorArcas();
 	
 	Boolean estado = true;
 	int saldo;
 	String codigoIngresado;
+	String accionAdministrador; 
+	int cantidadProductoNueva;
 	
-	public SistemaDispensador(){
+	public SistemaDispensador() throws IOException{
 		super();
+
+
+		crearArcas();
+
+		int opcionUsuario= JOptionPane.showConfirmDialog(null, "Quiere usted realizar una compra?");
+		if(opcionUsuario==JOptionPane.YES_OPTION){
+			metodosUsuarioComprador();
+		}else{
+			metodosUsuarioAdministrador();
+		}
+		
+	}
+	public void metodosUsuarioComprador(){
 		verificarEspiralExistente();
 		enviarCodigoIngresado(codigoIngresado);
 		verificarEspiralSeleccionado();
@@ -22,11 +40,40 @@ public class SistemaDispensador {
 		hacerConteoDelDineroIngresado();
 		calcularCambio(saldo);
 	}
+	
+	
+	private void crearArcas() {
+		controladorDeArcas.crearArcas();
+	}
+
+
+	public void metodosUsuarioAdministrador(){
+		recibirAccionAdministrador();
+		accionarTareaAdministrador(accionAdministrador);
+		
+	}
+<<<<<<< HEAD
+	public void accionarTareaAdministrador(String accionAdministrador){
+		if (accionAdministrador.equals("1")){
+			verificarEspiralExistente();
+			recibirCantidadProductoNueva();
+			enviarCodigoIngresado(codigoIngresado);
+			verificarEspiralSeleccionado();
+			cambiarCantidadProducto(codigoIngresado,cantidadProductoNueva);
+		}
+		System.exit(0);
+	}
+    public void cambiarCantidadProducto(String codigoProducto, int cantidadProducto) {
+		controladorDeEspirales.cambiarCantidadDelProducto(codigoProducto,cantidadProducto);
+	}
+=======
+
+>>>>>>> e45e76395fb64bd41b0273059ddffc3eea7c69bd
 	public void calcularCambio(int saldoIngresado){
 		controladorDeEspirales.calcularCambio(saldoIngresado);
 	}
 
-	public void confirmarCompra(int saldoIngresado) {
+	public void confirmarCompra(int saldoIngresado) throws HeadlessException, IOException {
 		controladorDeEspirales.confirmarCompra(saldoIngresado);
 	}
 	
@@ -37,6 +84,7 @@ public class SistemaDispensador {
 	public void enviarCodigoIngresado(String codigo) {
 		controladorDeEspirales.validarSaldoProductoDisponible(codigo);
 	}
+	
 
 	public boolean verificarEspiralExistente() {
 		Boolean auxiliarVerificacionEspiral = false;	
@@ -51,7 +99,7 @@ public class SistemaDispensador {
 		return auxiliarVerificacionEspiral;
 	}
 
-	public int hacerConteoDelDineroIngresado() {
+	public int hacerConteoDelDineroIngresado() throws IOException {
 		
 		int auxiliarConteoDinero = 0;
 		String auxiliarMenu = "1";
@@ -71,22 +119,32 @@ public class SistemaDispensador {
 	private void cancelarCompra(int auxiliarConteoDinero) {
 		controladorDeEspirales.cancelarCompra(auxiliarConteoDinero);
 	}
-
-	public int recibirDineroIngresado() {
+	
+	public int recibirDineroIngresado() throws IOException {
 		saldo = controladorVentanaComprador.mostrarDineroIngresado();
+		controladorDeArcas.obtenerArca(saldo);
 		return saldo;
 	}
-
+	
 	public String recibirCodigoIngresado() {
 		codigoIngresado = controladorVentanaComprador.mostrarCodigoIngresado();
 		return codigoIngresado;
 	}
+	public int recibirCantidadProductoNueva(){
+		cantidadProductoNueva = controladorVentanaAdministrador.mostrarCantidad();
+		return cantidadProductoNueva;
+	}
+	public String recibirAccionAdministrador(){
+		 accionAdministrador=controladorVentanaAdministrador.recibirAccionAdministrador();
+	return accionAdministrador;
+	}
 	
-	public void verificarEspiralSeleccionado(){
+	
+	public void verificarEspiralSeleccionado() throws IOException{
 		 controladorDeEspirales.verificarEspiralSeleccionada();
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		SistemaDispensador sd = new SistemaDispensador();
 		
 	}

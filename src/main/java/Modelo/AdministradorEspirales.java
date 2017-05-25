@@ -1,5 +1,7 @@
 package Modelo;
+import java.awt.HeadlessException;
 import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 import Controlador.ControladorEspirales;
@@ -78,9 +80,8 @@ public class AdministradorEspirales {
 		JOptionPane.showMessageDialog(null, "Nombre: "+espiral.getProducto()+ " Precio: " + espiral.getPrecioProducto());
 	}
 	
-	public boolean verificarContenidoEnEspiral() {
+	public boolean verificarContenidoEnEspiral() throws IOException {
 		if (espiral.getCantidad() < 1){
-			System.out.println(espiral.getCantidad());
 			int opcionCliente;
 			opcionCliente=JOptionPane.showConfirmDialog(null, "No hay existencias del producto. ¿Desea hacer otra compra?");
 			if (opcionCliente== JOptionPane.YES_OPTION) {
@@ -93,7 +94,7 @@ public class AdministradorEspirales {
 		}
 	}
 	
-	public void confirmarCompra(int saldoIngresado) {
+	public void confirmarCompra(int saldoIngresado) throws HeadlessException, IOException {
 		if((saldoIngresado >= espiral.getPrecioProducto()) && (verificarContenidoEnEspiral() == true) && (1==1)){
 			calcularCambio(saldoIngresado);
 			//int cantidadActual=espiral.getCantidad();
@@ -119,4 +120,10 @@ public class AdministradorEspirales {
 		JOptionPane.showMessageDialog(null, "Compra rechazada, dinero devuelto: "+auxiliarConteoDinero);
 		System.exit(0); 
 	}
+
+	public void cambiarCantidadProducto(String codigoProducto, int cantidadProducto) {
+		conocerLineaDondeEstaElProducto(codigoProducto);
+		espiral.setCantidad(cantidadProducto);
+		System.out.println("cantidad nueva: "+espiral.cantidad+" producto: "+espiral.producto);
+		}
 }

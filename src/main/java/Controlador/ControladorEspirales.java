@@ -1,5 +1,8 @@
 package Controlador;
 
+import java.awt.HeadlessException;
+import java.io.IOException;
+
 import Modelo.AdministradorEspirales;
 
 public class ControladorEspirales{
@@ -14,7 +17,7 @@ public class ControladorEspirales{
 		return administradorDeEspirales.mostrarEspirales();
 	}
 	
-	public void verificarEspiralSeleccionada(){
+	public void verificarEspiralSeleccionada() throws IOException{
 		 administradorDeEspirales.verificarContenidoEnEspiral();
 	}
 	
@@ -22,7 +25,7 @@ public class ControladorEspirales{
 		administradorDeEspirales.mostrarPrecioYNombreDeProducto();
 	}
 
-	public void confirmarCompra(int saldoIngresado) {
+	public void confirmarCompra(int saldoIngresado) throws HeadlessException, IOException {
 		administradorDeEspirales.confirmarCompra(saldoIngresado);
 	}
 
@@ -34,5 +37,9 @@ public class ControladorEspirales{
 	public void cancelarCompra(int auxiliarConteoDinero) {
 		administradorDeEspirales.cancelarCompra(auxiliarConteoDinero);
 		
+	}
+
+	public void cambiarCantidadDelProducto(String codigoProducto, int cantidadProducto) {
+		administradorDeEspirales.cambiarCantidadProducto(codigoProducto,cantidadProducto);
 	}
 }

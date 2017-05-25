@@ -17,9 +17,5 @@ public class ControladorArcasTest {
 		controladorDeArcas = new ControladorArcas();
 	}
 	
-	@Test
-	public void debeDarErrorSiEntrada0() throws IOException{
-		//assertEquals("", controladorDeArcas.obtenerArca(0));
-	}
 
 }

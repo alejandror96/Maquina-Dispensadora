@@ -25,7 +25,6 @@ public class AdministradorArcas {
 		File fichero = new File("arcas.txt");
 		Scanner s = null;
 		String auxiliar ="";
-		JOptionPane.showMessageDialog(null, "monto"+saldo);
 		try {
 			s = new Scanner(fichero);
 			while (s.hasNextLine()) {

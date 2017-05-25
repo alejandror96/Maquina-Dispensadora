@@ -52,13 +52,13 @@ public class SistemaDispensador {
 			verificarEspiralExistente();
 			recibirCantidadProductoNueva();
 			enviarCodigoIngresado(codigoIngresado);
-			verificarEspiralSeleccionado();
+			//verificarEspiralSeleccionado();
 			cambiarCantidadProducto(codigoIngresado,cantidadProductoNueva);
 		}
 		System.exit(0);
 	}
 	
-    public void cambiarCantidadProducto(String codigoProducto, int cantidadProducto) {
+    public void cambiarCantidadProducto(String codigoProducto, int cantidadProducto) throws IOException {
 		controladorDeEspirales.cambiarCantidadDelProducto(codigoProducto,cantidadProducto);
 	}
 

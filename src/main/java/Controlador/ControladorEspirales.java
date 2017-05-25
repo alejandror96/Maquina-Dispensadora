@@ -39,7 +39,7 @@ public class ControladorEspirales{
 		
 	}
 
-	public void cambiarCantidadDelProducto(String codigoProducto, int cantidadProducto) {
+	public void cambiarCantidadDelProducto(String codigoProducto, int cantidadProducto) throws IOException {
 		administradorDeEspirales.cambiarCantidadProducto(codigoProducto,cantidadProducto);
 	}
 }

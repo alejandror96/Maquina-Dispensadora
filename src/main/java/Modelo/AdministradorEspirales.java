@@ -1,7 +1,12 @@
 package Modelo;
 import java.awt.HeadlessException;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 import Controlador.ControladorEspirales;
@@ -115,9 +120,44 @@ public class AdministradorEspirales {
 		System.exit(0); 
 	}
 
-	public void cambiarCantidadProducto(String codigoProducto, int cantidadProducto) {
-		conocerLineaDondeEstaElProducto(codigoProducto);
+	public void cambiarCantidadProducto(String codigoProducto, int cantidadProducto) throws IOException {
+		String[] datosEspiral= lineaDondeEstaProducto.split(",");
+		espiral.setCodigo(datosEspiral[0]);
+		espiral.setProducto(datosEspiral[1]);
 		espiral.setCantidad(cantidadProducto);
+		espiral.setPrecioProducto(Integer.parseInt(datosEspiral[3]));
+		String nuevaLinea=espiral.getCodigo()+","+espiral.getProducto()+","+espiral.getCantidad()+","+espiral.getPrecioProducto();
+		System.out.println(nuevaLinea);
 		System.out.println("cantidad nueva: "+espiral.cantidad+" producto: "+espiral.producto);
+		try{
+			File inFile = new File("productos.txt"); 
+	        if (!inFile.isFile()) {
+	            System.out.println("archivo que no existe");
+	            return;
+	        }
+			File tempFile = new File(inFile.getAbsolutePath() + ".tmp");
+	        BufferedReader br = new BufferedReader(new FileReader("productos.txt"));
+	        PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
+	        String recorredorArchivo;
+	        pw.println(nuevaLinea);
+			while ((recorredorArchivo = br.readLine()) != null) {
+				if (!recorredorArchivo.trim().equals(lineaDondeEstaProducto)) {
+					pw.println(recorredorArchivo);
+	                pw.flush();
+	             }
+				
+	         }
+			 pw.close();
+	         br.close();
+	
+	         if (!inFile.delete()) {
+	             System.out.println("No se puede");
+	             return;
+	         }
+	         if (!tempFile.renameTo(inFile))
+	             System.out.println("No se puede");
+		} catch (FileNotFoundException ex) {
+         ex.printStackTrace();
+     }
 		}
 }

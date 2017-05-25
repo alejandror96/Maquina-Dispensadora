@@ -13,16 +13,10 @@ public class SistemaDispensador {
 	public SistemaDispensador(){
 		super();
 		verificarEspiralExistente();
-		mostrarInformacionProducto();
 		hacerConteoDelDineroIngresado();
-		confirmarCompra();
 	}
-	
-	private void mostrarInformacionProducto() {
-		controladorDeEspirales.informacionProducto();
-		
-	}
-	
+
+
 	public boolean verificarEspiralExistente() {
 		Boolean auxiliarVerificacionEspiral = false;	
 		while(auxiliarVerificacionEspiral == false){		
@@ -36,9 +30,6 @@ public class SistemaDispensador {
 		return auxiliarVerificacionEspiral;
 	}
 
-	public void confirmarCompra() {
-		controladorDeEspirales.informacionProducto();
-	}
 
 	public int hacerConteoDelDineroIngresado() {
 		
@@ -48,6 +39,9 @@ public class SistemaDispensador {
 			auxiliarConteoDinero = auxiliarConteoDinero + recibirDineroIngresado();
 			JOptionPane.showMessageDialog(null, "Dinero ingresado hasta el momento: " + auxiliarConteoDinero);
 			auxiliarMenu = JOptionPane.showInputDialog("1. Ingresar dinero \nOtro. Continuar");	
+			if(auxiliarMenu!="1"){
+			JOptionPane.showMessageDialog(null,"Producto a comprar: "+controladorVentanaComprador); 
+			}
 		}
 		return auxiliarConteoDinero;
 	}

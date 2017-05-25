@@ -91,7 +91,13 @@ public class AdministradorEspirales {
 		if((saldoIngresado >= espiral.getPrecioProducto()) && (verificarContenidoEnEspiral() == true) && (1==1)){
 			JOptionPane.showMessageDialog(null, "Retire su producto de la máquina");
 		}else{
-			JOptionPane.showMessageDialog(null, "Compra recazada, dinero devuelto: "+saldoIngresado);
+			JOptionPane.showMessageDialog(null, "Compra rechazada, dinero devuelto: "+saldoIngresado);
+			System.exit(0); 
 		}		
+	}
+
+	public void cancelarCompra(int auxiliarConteoDinero) {
+		// TODO Auto-generated method stub
+		
 	}
 }

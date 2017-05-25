@@ -25,4 +25,9 @@ public class ControladorEspirales{
 	public void confirmarCompra(int saldoIngresado) {
 		administradorDeEspirales.confirmarCompra(saldoIngresado);
 	}
+
+	public void cancelarCompra(int auxiliarConteoDinero) {
+		administradorDeEspirales.cancelarCompra(auxiliarConteoDinero);
+		
+	}
 }

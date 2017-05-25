@@ -6,7 +6,6 @@ import Vista.VentanaUsuarioComprador;
 
 public class SistemaDispensador {
 	
-
 	ControladorVentanaUsuarioComprador controladorVentanaComprador = new ControladorVentanaUsuarioComprador();
 	ControladorEspirales controladorDeEspirales = new ControladorEspirales();
 	
@@ -61,9 +60,13 @@ public class SistemaDispensador {
 			}
 		}
 		if(auxiliarMenu != "1" || auxiliarMenu != "2"){
-			
+			cancelarCompra(auxiliarConteoDinero);
 		}
 		return auxiliarConteoDinero;
+	}
+
+	private void cancelarCompra(int auxiliarConteoDinero) {
+		controladorDeEspirales.cancelarCompra(auxiliarConteoDinero);
 	}
 
 	public int recibirDineroIngresado() {

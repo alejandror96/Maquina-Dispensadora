@@ -17,6 +17,7 @@ public class SistemaDispensador {
 		super();
 		verificarEspiralExistente();
 		enviarCodigoIngresado(codigoIngresado);
+		verificarEspiralSeleccionado();
 		mostrarNombreYPrecioDeProducto();
 		hacerConteoDelDineroIngresado();
 		calcularCambio(saldo);
@@ -42,7 +43,6 @@ public class SistemaDispensador {
 		while(auxiliarVerificacionEspiral == false){		
 			if (controladorDeEspirales.mostrarEspirales().contains(recibirCodigoIngresado()+",")){
 				auxiliarVerificacionEspiral = true;
-				verificarEspiralSeleccionado();
 			}else{
 				JOptionPane.showMessageDialog(null, "El código ingresado no existe", "Error", JOptionPane.ERROR_MESSAGE);
 				auxiliarVerificacionEspiral = false;

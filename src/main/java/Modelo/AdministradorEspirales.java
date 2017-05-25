@@ -79,11 +79,13 @@ public class AdministradorEspirales {
 	}
 	
 	public boolean verificarContenidoEnEspiral() {
-		if (espiral.getCantidad()>=1){
+		if (espiral.getCantidad() < 1){
 			System.out.println(espiral.getCantidad());
+			JOptionPane.showMessageDialog(null, "No hay existencias del producto");
+			return false;
+		}else{
 			return true;
 		}
-		return false;
 	}
 	
 	public void confirmarCompra(int saldoIngresado) {

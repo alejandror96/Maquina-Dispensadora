@@ -35,6 +35,7 @@ public class SistemaDispensador {
 		while(auxiliarVerificacionEspiral == false){		
 			if (controladorDeEspirales.mostrarEspirales().contains(recibirCodigoIngresado()+",")){
 				auxiliarVerificacionEspiral = true;
+				verificarEspiralSeleccionado();
 			}else{
 				JOptionPane.showMessageDialog(null, "El código ingresado no existe", "Error", JOptionPane.ERROR_MESSAGE);
 				auxiliarVerificacionEspiral = false;
@@ -66,6 +67,10 @@ public class SistemaDispensador {
 	public String recibirCodigoIngresado() {
 		codigoIngresado = controladorVentanaComprador.mostrarCodigoIngresado();
 		return codigoIngresado;
+	}
+	
+	public Boolean verificarEspiralSeleccionado(){
+		return controladorDeEspirales.verificarEspiralSeleccionada();
 	}
 
 	public static void main(String[] args) {

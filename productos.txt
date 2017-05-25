@@ -1,5 +1,5 @@
 a1,papas,7,2000
-a2,jugo,3,1000
+a2,jugo,0,1000
 a3,bombombum,5,3000
 b1,chocolatina,0,500
 b2,chicles,3,200

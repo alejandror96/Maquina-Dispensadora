@@ -13,4 +13,8 @@ public class ControladorEspirales{
 	public String mostrarEspirales(){
 		return administradorDeEspirales.mostrarEspirales();
 	}
+	
+	public boolean verificarEspiralSeleccionada(){
+		return administradorDeEspirales.verificarContenidoEnEspiral();
+	}
 }

@@ -9,6 +9,7 @@ public class AdministradorEspirales {
 	
 	int capacidadMaxima = 15;
 	Espiral datosEspiral;
+	Espiral espiral = new Espiral();
 	
 	public String mostrarEspirales() {
 		File fichero = new File("productos.txt");
@@ -37,8 +38,21 @@ public class AdministradorEspirales {
 	public void mostrarInformacionProducto(){
 		
 		ControladorEspirales controladorEspiral = new ControladorEspirales();
-		System.out.println("cambio prueba pao");
 		JOptionPane.showMessageDialog(null, "algo");
+	}
+
+	public Boolean verificarContenidoEnEspiral() {
+		Boolean auxiliarVerificacionContenidoEspiral = false;	
+		while(auxiliarVerificacionContenidoEspiral == false){		
+			if (espiral.getCantidad()>1){
+				auxiliarVerificacionContenidoEspiral = true;
+			}else{
+				JOptionPane.showMessageDialog(null, "El producto deseado no posee existencias", "Error", JOptionPane.ERROR_MESSAGE);
+				auxiliarVerificacionContenidoEspiral = false;
+			}
+		}
+		return auxiliarVerificacionContenidoEspiral;
+		
 	}
 	
 }

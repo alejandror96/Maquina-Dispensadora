@@ -42,7 +42,7 @@ public class AdministradorEspirales {
 		return auxiliarParaMostrar;
 	}
 	
-	public void conocerLineaDondeEstaElProducto(String codigo) {
+	public String conocerLineaDondeEstaElProducto(String codigo) {
 		File fichero = new File("productos.txt");
 		Scanner s = null;
 		String auxiliarLinea = "";
@@ -66,6 +66,7 @@ public class AdministradorEspirales {
 		}
 		darValoresAEspiral(auxiliarLinea);
 		lineaDondeEstaProducto=auxiliarLinea;
+		return auxiliarLinea;
 	}
 	
 	public void darValoresAEspiral(String auxiliarLinea){
@@ -105,13 +106,15 @@ public class AdministradorEspirales {
 	}
 
 
-	public void calcularCambio(int saldoIngresado) {
+	public int calcularCambio(int saldoIngresado) {
 		int cambio; 
 		cambio= saldoIngresado-espiral.getPrecioProducto();
 		if(espiral.getPrecioProducto()==saldoIngresado){
 			JOptionPane.showMessageDialog(null, "compra exitosa");
+			return cambio;
 		}else 
 	JOptionPane.showMessageDialog(null, "Su cambio es de: "+cambio);
+		return cambio;
 	}
 
 	public void cancelarCompra(int auxiliarConteoDinero) {

@@ -2,7 +2,7 @@ package Modelo;
 
 public class Espiral {
 	
-	int cualquiercosa;
+	
 	String codigo;
 	String producto;
 	int cantidad;

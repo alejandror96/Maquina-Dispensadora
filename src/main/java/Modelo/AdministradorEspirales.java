@@ -127,8 +127,6 @@ public class AdministradorEspirales {
 		espiral.setCantidad(cantidadProducto);
 		espiral.setPrecioProducto(Integer.parseInt(datosEspiral[3]));
 		String nuevaLinea=espiral.getCodigo()+","+espiral.getProducto()+","+espiral.getCantidad()+","+espiral.getPrecioProducto();
-		System.out.println(nuevaLinea);
-		System.out.println("cantidad nueva: "+espiral.cantidad+" producto: "+espiral.producto);
 		try{
 			File inFile = new File("productos.txt"); 
 	        if (!inFile.isFile()) {
@@ -145,8 +143,7 @@ public class AdministradorEspirales {
 					pw.println(recorredorArchivo);
 	                pw.flush();
 	             }
-				
-	         }
+			}
 			 pw.close();
 	         br.close();
 	

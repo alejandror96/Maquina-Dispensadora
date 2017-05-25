@@ -52,7 +52,6 @@ public class SistemaDispensador {
 			verificarEspiralExistente();
 			recibirCantidadProductoNueva();
 			enviarCodigoIngresado(codigoIngresado);
-			//verificarEspiralSeleccionado();
 			cambiarCantidadProducto(codigoIngresado,cantidadProductoNueva);
 		}
 		System.exit(0);

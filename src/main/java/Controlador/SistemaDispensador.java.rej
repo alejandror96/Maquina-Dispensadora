@@ -1,0 +1,11 @@
+diff a/src/main/java/Controlador/SistemaDispensador.java b/src/main/java/Controlador/SistemaDispensador.java	(rejected hunks)
+@@ -66,9 +66,6 @@
+     public void cambiarCantidadProducto(String codigoProducto, int cantidadProducto) {
+ 		controladorDeEspirales.cambiarCantidadDelProducto(codigoProducto,cantidadProducto);
+ 	}
+-=======
+-
+->>>>>>> e45e76395fb64bd41b0273059ddffc3eea7c69bd
+ 	public void calcularCambio(int saldoIngresado){
+ 		controladorDeEspirales.calcularCambio(saldoIngresado);
+ 	}

@@ -20,18 +20,18 @@ public class SistemaDispensador {
 	
 	public SistemaDispensador() throws IOException{
 		super();
-
-
-		crearArcas();
-
+		mostrarMenu();
+	}
+	
+	public void mostrarMenu() throws IOException{
 		int opcionUsuario= JOptionPane.showConfirmDialog(null, "Quiere usted realizar una compra?");
 		if(opcionUsuario==JOptionPane.YES_OPTION){
 			metodosUsuarioComprador();
 		}else{
 			metodosUsuarioAdministrador();
 		}
-		
 	}
+	
 	public void metodosUsuarioComprador() throws IOException{
 		verificarEspiralExistente();
 		enviarCodigoIngresado(codigoIngresado);
@@ -41,12 +41,6 @@ public class SistemaDispensador {
 		calcularCambio(saldo);
 	}
 	
-	
-	private void crearArcas() {
-		controladorDeArcas.crearArcas();
-	}
-
-
 	public void metodosUsuarioAdministrador() throws IOException{
 		recibirAccionAdministrador();
 		accionarTareaAdministrador(accionAdministrador);
@@ -63,6 +57,7 @@ public class SistemaDispensador {
 		}
 		System.exit(0);
 	}
+	
     public void cambiarCantidadProducto(String codigoProducto, int cantidadProducto) {
 		controladorDeEspirales.cambiarCantidadDelProducto(codigoProducto,cantidadProducto);
 	}

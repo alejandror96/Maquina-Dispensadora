@@ -12,6 +12,7 @@ public class AdministradorEspirales {
 	int capacidadMaxima = 15;
 	Espiral datosEspiral;
 	Espiral espiral = new Espiral();
+	String lineaDondeEstaProducto;
 	
 	public String mostrarEspirales() {
 		File fichero = new File("productos.txt");
@@ -37,12 +38,6 @@ public class AdministradorEspirales {
 		return auxiliarParaMostrar;
 	}
 	
-	public void mostrarInformacionProducto(){
-		
-		ControladorEspirales controladorEspiral = new ControladorEspirales();
-		JOptionPane.showMessageDialog(null, "algo");
-	}
-
 	public void conocerLineaDondeEstaElProducto(String codigo) {
 		File fichero = new File("productos.txt");
 		Scanner s = null;
@@ -66,6 +61,7 @@ public class AdministradorEspirales {
 			}
 		}
 		darValoresAEspiral(auxiliarLinea);
+		lineaDondeEstaProducto=auxiliarLinea;
 	}
 	
 	public void darValoresAEspiral(String auxiliarLinea){
@@ -97,8 +93,6 @@ public class AdministradorEspirales {
 	public void confirmarCompra(int saldoIngresado) throws HeadlessException, IOException {
 		if((saldoIngresado >= espiral.getPrecioProducto()) && (verificarContenidoEnEspiral() == true) && (1==1)){
 			calcularCambio(saldoIngresado);
-			//int cantidadActual=espiral.getCantidad();
-			//espiral.setCantidad(cantidadActual-1);
 			JOptionPane.showMessageDialog(null, "Retire su producto de la máquina");
 			System.exit(0); 
 		}else{

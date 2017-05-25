@@ -32,7 +32,7 @@ public class SistemaDispensador {
 		}
 		
 	}
-	public void metodosUsuarioComprador(){
+	public void metodosUsuarioComprador() throws IOException{
 		verificarEspiralExistente();
 		enviarCodigoIngresado(codigoIngresado);
 		verificarEspiralSeleccionado();
@@ -47,13 +47,13 @@ public class SistemaDispensador {
 	}
 
 
-	public void metodosUsuarioAdministrador(){
+	public void metodosUsuarioAdministrador() throws IOException{
 		recibirAccionAdministrador();
 		accionarTareaAdministrador(accionAdministrador);
 		
 	}
-<<<<<<< HEAD
-	public void accionarTareaAdministrador(String accionAdministrador){
+
+	public void accionarTareaAdministrador(String accionAdministrador) throws IOException{
 		if (accionAdministrador.equals("1")){
 			verificarEspiralExistente();
 			recibirCantidadProductoNueva();
@@ -66,9 +66,7 @@ public class SistemaDispensador {
     public void cambiarCantidadProducto(String codigoProducto, int cantidadProducto) {
 		controladorDeEspirales.cambiarCantidadDelProducto(codigoProducto,cantidadProducto);
 	}
-=======
 
->>>>>>> e45e76395fb64bd41b0273059ddffc3eea7c69bd
 	public void calcularCambio(int saldoIngresado){
 		controladorDeEspirales.calcularCambio(saldoIngresado);
 	}

@@ -6,13 +6,13 @@ import javax.swing.JOptionPane;
 import Controlador.SistemaDispensador;
 
 public class AdministradorEspirales {
-	
+	File fichero = new File("productos.txt");
+	Scanner s = null;
 	int capacidadMaxima = 15;
 	Espiral datosEspiral;
 	
 	public String mostrarEspirales() {
-		File fichero = new File("productos.txt");
-		Scanner s = null;
+		
 		String auxiliarParaMostrar = "";
 		try {
 			s = new Scanner(fichero);

@@ -37,7 +37,8 @@ public class AdministradorEspirales {
 	public void mostrarInformacionProducto(){
 		
 		ControladorEspirales controladorEspiral = new ControladorEspirales();
-		
+		System.out.println("cambio prueba pao");
 		JOptionPane.showMessageDialog(null, "algo");
 	}
+	
 }

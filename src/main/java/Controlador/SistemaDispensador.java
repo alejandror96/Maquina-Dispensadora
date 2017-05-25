@@ -20,19 +20,19 @@ public class SistemaDispensador {
 	
 	public SistemaDispensador() throws IOException{
 		super();
-
-
-		crearArcas();
-
+		mostrarMenu();
+	}
+	
+	public void mostrarMenu() throws IOException{
 		int opcionUsuario= JOptionPane.showConfirmDialog(null, "Quiere usted realizar una compra?");
 		if(opcionUsuario==JOptionPane.YES_OPTION){
 			metodosUsuarioComprador();
 		}else{
 			metodosUsuarioAdministrador();
 		}
-		
 	}
-	public void metodosUsuarioComprador(){
+	
+	public void metodosUsuarioComprador() throws IOException{
 		verificarEspiralExistente();
 		enviarCodigoIngresado(codigoIngresado);
 		verificarEspiralSeleccionado();
@@ -41,34 +41,26 @@ public class SistemaDispensador {
 		calcularCambio(saldo);
 	}
 	
-	
-	private void crearArcas() {
-		controladorDeArcas.crearArcas();
-	}
-
-
-	public void metodosUsuarioAdministrador(){
+	public void metodosUsuarioAdministrador() throws IOException{
 		recibirAccionAdministrador();
 		accionarTareaAdministrador(accionAdministrador);
 		
 	}
-<<<<<<< HEAD
-	public void accionarTareaAdministrador(String accionAdministrador){
+
+	public void accionarTareaAdministrador(String accionAdministrador) throws IOException{
 		if (accionAdministrador.equals("1")){
 			verificarEspiralExistente();
 			recibirCantidadProductoNueva();
 			enviarCodigoIngresado(codigoIngresado);
-			verificarEspiralSeleccionado();
 			cambiarCantidadProducto(codigoIngresado,cantidadProductoNueva);
 		}
 		System.exit(0);
 	}
-    public void cambiarCantidadProducto(String codigoProducto, int cantidadProducto) {
+	
+    public void cambiarCantidadProducto(String codigoProducto, int cantidadProducto) throws IOException {
 		controladorDeEspirales.cambiarCantidadDelProducto(codigoProducto,cantidadProducto);
 	}
-=======
 
->>>>>>> e45e76395fb64bd41b0273059ddffc3eea7c69bd
 	public void calcularCambio(int saldoIngresado){
 		controladorDeEspirales.calcularCambio(saldoIngresado);
 	}

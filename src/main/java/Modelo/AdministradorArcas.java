@@ -62,7 +62,6 @@ public class AdministradorArcas {
 		arca.setCantidadAlmacenada(Integer.parseInt(datosArca[2])+1);
 		arca.setCantidadMaxima(Integer.parseInt(datosArca[3]));
 		String nuevaLinea=arca.getIdArca()+","+arca.getDenominacion()+","+arca.getCantidadAlmacenada()+","+arca.getCantidadMaxima();
-		System.out.println(nuevaLinea);
 		try{
 			File inFile = new File("arcas.txt");
 	        if (!inFile.isFile()) {

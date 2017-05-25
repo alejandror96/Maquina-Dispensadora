@@ -1,5 +1,8 @@
 package Controlador;
 
+import java.awt.HeadlessException;
+import java.io.IOException;
+
 import javax.swing.JOptionPane;
 
 import Vista.VentanaUsuarioComprador;
@@ -8,13 +11,16 @@ public class SistemaDispensador {
 	
 	ControladorVentanaUsuarioComprador controladorVentanaComprador = new ControladorVentanaUsuarioComprador();
 	ControladorEspirales controladorDeEspirales = new ControladorEspirales();
+	ControladorArcas controladorDeArcas = new ControladorArcas();
 	
 	Boolean estado = true;
 	int saldo;
 	String codigoIngresado;
 	
-	public SistemaDispensador(){
+	public SistemaDispensador() throws IOException{
 		super();
+
+		crearArcas();
 		verificarEspiralExistente();
 		enviarCodigoIngresado(codigoIngresado);
 		verificarEspiralSeleccionado();
@@ -22,11 +28,17 @@ public class SistemaDispensador {
 		hacerConteoDelDineroIngresado();
 		calcularCambio(saldo);
 	}
+	
+	
+	private void crearArcas() {
+		controladorDeArcas.crearArcas();
+	}
+
 	public void calcularCambio(int saldoIngresado){
 		controladorDeEspirales.calcularCambio(saldoIngresado);
 	}
 
-	public void confirmarCompra(int saldoIngresado) {
+	public void confirmarCompra(int saldoIngresado) throws HeadlessException, IOException {
 		controladorDeEspirales.confirmarCompra(saldoIngresado);
 	}
 	
@@ -51,7 +63,7 @@ public class SistemaDispensador {
 		return auxiliarVerificacionEspiral;
 	}
 
-	public int hacerConteoDelDineroIngresado() {
+	public int hacerConteoDelDineroIngresado() throws IOException {
 		
 		int auxiliarConteoDinero = 0;
 		String auxiliarMenu = "1";
@@ -71,22 +83,23 @@ public class SistemaDispensador {
 	private void cancelarCompra(int auxiliarConteoDinero) {
 		controladorDeEspirales.cancelarCompra(auxiliarConteoDinero);
 	}
-
-	public int recibirDineroIngresado() {
+	
+	public int recibirDineroIngresado() throws IOException {
 		saldo = controladorVentanaComprador.mostrarDineroIngresado();
+		controladorDeArcas.obtenerArca(saldo);
 		return saldo;
 	}
-
+	
 	public String recibirCodigoIngresado() {
 		codigoIngresado = controladorVentanaComprador.mostrarCodigoIngresado();
 		return codigoIngresado;
 	}
 	
-	public void verificarEspiralSeleccionado(){
+	public void verificarEspiralSeleccionado() throws IOException{
 		 controladorDeEspirales.verificarEspiralSeleccionada();
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		SistemaDispensador sd = new SistemaDispensador();
 		
 	}

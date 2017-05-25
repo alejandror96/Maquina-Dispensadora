@@ -22,8 +22,8 @@ public class ControladorEspirales{
 		administradorDeEspirales.mostrarPrecioYNombreDeProducto();
 	}
 
-	public void rechazarCompra(int saldoIngresado) {
-		administradorDeEspirales.rechazarCompra(saldoIngresado);
+	public void confirmarCompra(int saldoIngresado) {
+		administradorDeEspirales.confirmarCompra(saldoIngresado);
 	}
 
 	public void calcularCambio(int saldoIngresado) {

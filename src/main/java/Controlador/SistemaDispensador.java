@@ -13,7 +13,6 @@ public class SistemaDispensador {
 	Boolean estado = true;
 	int saldo;
 	String codigoIngresado;
-	int saldoIngresado;
 	
 	public SistemaDispensador(){
 		super();
@@ -21,22 +20,25 @@ public class SistemaDispensador {
 		enviarCodigoIngresado(codigoIngresado);
 		mostrarNombreYPrecioDeProducto();
 		hacerConteoDelDineroIngresado();
+<<<<<<< HEAD
 		rechazarCompra(saldoIngresado);
 		calcularCambio(saldoIngresado);
 	}
 	public void calcularCambio(int saldoIngresado){
 		controladorDeEspirales.calcularCambio(saldoIngresado);
+=======
+>>>>>>> e8ce733fa3ded1473b2ac79491465b318febf8af
 	}
 
-	private void rechazarCompra(int saldoIngresado) {
-		controladorDeEspirales.rechazarCompra(saldoIngresado);
+	public void confirmarCompra(int saldoIngresado) {
+		controladorDeEspirales.confirmarCompra(saldoIngresado);
 	}
-
-	private void mostrarNombreYPrecioDeProducto() {
+	
+	public void mostrarNombreYPrecioDeProducto() {
 		controladorDeEspirales.mostrarPrecioYNombreDeProducto();
 	}
 
-	private void enviarCodigoIngresado(String codigo) {
+	public void enviarCodigoIngresado(String codigo) {
 		controladorDeEspirales.validarSaldoProductoDisponible(codigo);
 	}
 
@@ -61,12 +63,14 @@ public class SistemaDispensador {
 		while(auxiliarMenu.equals("1")){
 			auxiliarConteoDinero = auxiliarConteoDinero + recibirDineroIngresado();
 			JOptionPane.showMessageDialog(null, "Dinero ingresado hasta el momento: " + auxiliarConteoDinero);
-			auxiliarMenu = JOptionPane.showInputDialog("1. Ingresar dinero \nOtro. Continuar");	
-			if(auxiliarMenu!="1"){
-			JOptionPane.showMessageDialog(null,"Producto a comprar: "+controladorVentanaComprador); 
+			auxiliarMenu = JOptionPane.showInputDialog("1. Ingresar dinero 2.Confirmar compra \nOtro. Cancelar Compra");	
+			if(auxiliarMenu!="2"){
+				confirmarCompra(auxiliarConteoDinero);
 			}
 		}
-		saldoIngresado = auxiliarConteoDinero;
+		if(auxiliarMenu != "1" || auxiliarMenu != "2"){
+			
+		}
 		return auxiliarConteoDinero;
 	}
 

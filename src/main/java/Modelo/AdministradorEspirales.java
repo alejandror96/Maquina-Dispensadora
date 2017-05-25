@@ -79,10 +79,10 @@ public class AdministradorEspirales {
 	}
 	
 	public Boolean verificarContenidoEnEspiral() {
-		if (espiral.getCantidad()>1){
+		if (espiral.getCantidad()>=1){
+			System.out.println(espiral.getCantidad());
 			return true;
 		}
-		JOptionPane.showMessageDialog(null, "El producto seleccionado no posee existencias.");
 		return false;
 	}
 	
@@ -91,10 +91,12 @@ public class AdministradorEspirales {
 		if((saldoIngresado >= espiral.getPrecioProducto()) && (verificarContenidoEnEspiral() == true) && (1==1)){
 			JOptionPane.showMessageDialog(null, "Retire su producto de la máquina");
 		}else{
-			JOptionPane.showMessageDialog(null, "Compra recazada, dinero devuelto: "+saldoIngresado);
+			JOptionPane.showMessageDialog(null, "Compra rechazada, dinero devuelto: "+saldoIngresado);
+			System.exit(0); 
 		}		
 	}
 
+<<<<<<< HEAD
 	public void calcularCambio(int saldoIngresado) {
 		int cambio; 
 		cambio= espiral.getPrecioProducto()-saldoIngresado;
@@ -103,5 +105,10 @@ public class AdministradorEspirales {
 			JOptionPane.showMessageDialog(null, "compra exitosa");
 		}else 
 	JOptionPane.showMessageDialog(null, "Su cambio es de: "+cambio);
+=======
+	public void cancelarCompra(int auxiliarConteoDinero) {
+		// TODO Auto-generated method stub
+		
+>>>>>>> 3b48a7bfeb883395c41748584fc70579466004d6
 	}
 }

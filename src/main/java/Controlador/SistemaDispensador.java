@@ -6,7 +6,6 @@ import Vista.VentanaUsuarioComprador;
 
 public class SistemaDispensador {
 	
-
 	ControladorVentanaUsuarioComprador controladorVentanaComprador = new ControladorVentanaUsuarioComprador();
 	ControladorEspirales controladorDeEspirales = new ControladorEspirales();
 	
@@ -69,9 +68,13 @@ public class SistemaDispensador {
 			}
 		}
 		if(auxiliarMenu != "1" || auxiliarMenu != "2"){
-			
+			cancelarCompra(auxiliarConteoDinero);
 		}
 		return auxiliarConteoDinero;
+	}
+
+	private void cancelarCompra(int auxiliarConteoDinero) {
+		controladorDeEspirales.cancelarCompra(auxiliarConteoDinero);
 	}
 
 	public int recibirDineroIngresado() {
@@ -83,8 +86,10 @@ public class SistemaDispensador {
 		return codigoIngresado;
 	}
 	
-	public Boolean verificarEspiralSeleccionado(){
-		return controladorDeEspirales.verificarEspiralSeleccionada();
+	public void verificarEspiralSeleccionado(){
+		if (controladorDeEspirales.verificarEspiralSeleccionada()==false){
+			JOptionPane.showMessageDialog(null, "El producto seleccionado no posee existencias.");
+		}
 	}
 
 	public static void main(String[] args) {

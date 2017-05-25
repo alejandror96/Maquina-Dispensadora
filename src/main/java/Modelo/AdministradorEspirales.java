@@ -120,4 +120,10 @@ public class AdministradorEspirales {
 		JOptionPane.showMessageDialog(null, "Compra rechazada, dinero devuelto: "+auxiliarConteoDinero);
 		System.exit(0); 
 	}
+
+	public void cambiarCantidadProducto(String codigoProducto, int cantidadProducto) {
+		conocerLineaDondeEstaElProducto(codigoProducto);
+		espiral.setCantidad(cantidadProducto);
+		System.out.println("cantidad nueva: "+espiral.cantidad+" producto: "+espiral.producto);
+		}
 }

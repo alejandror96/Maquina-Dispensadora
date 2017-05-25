@@ -2,16 +2,17 @@ package Controlador;
 
 import javax.swing.JOptionPane;
 
-import Vista.VentanaUsuarioComprador;
 
 public class SistemaDispensador {
-	
+	ControladorVentanaUsuarioAdministrador controladorVentanaAdministrador = new ControladorVentanaUsuarioAdministrador();	
 	ControladorVentanaUsuarioComprador controladorVentanaComprador = new ControladorVentanaUsuarioComprador();
 	ControladorEspirales controladorDeEspirales = new ControladorEspirales();
 	
 	Boolean estado = true;
 	int saldo;
 	String codigoIngresado;
+	String accionAdministrador; 
+	int cantidadProductoNueva;
 	
 	public SistemaDispensador(){
 		super();
@@ -32,7 +33,22 @@ public class SistemaDispensador {
 		calcularCambio(saldo);
 	}
 	public void metodosUsuarioAdministrador(){
+		recibirAccionAdministrador();
+		accionarTareaAdministrador(accionAdministrador);
 		
+	}
+	public void accionarTareaAdministrador(String accionAdministrador){
+		if (accionAdministrador.equals("1")){
+			verificarEspiralExistente();
+			recibirCantidadProductoNueva();
+			enviarCodigoIngresado(codigoIngresado);
+			verificarEspiralSeleccionado();
+			cambiarCantidadProducto(codigoIngresado,cantidadProductoNueva);
+		}
+		System.exit(0);
+	}
+    public void cambiarCantidadProducto(String codigoProducto, int cantidadProducto) {
+		controladorDeEspirales.cambiarCantidadDelProducto(codigoProducto,cantidadProducto);
 	}
 	public void calcularCambio(int saldoIngresado){
 		controladorDeEspirales.calcularCambio(saldoIngresado);
@@ -49,6 +65,7 @@ public class SistemaDispensador {
 	public void enviarCodigoIngresado(String codigo) {
 		controladorDeEspirales.validarSaldoProductoDisponible(codigo);
 	}
+	
 
 	public boolean verificarEspiralExistente() {
 		Boolean auxiliarVerificacionEspiral = false;	
@@ -93,6 +110,15 @@ public class SistemaDispensador {
 		codigoIngresado = controladorVentanaComprador.mostrarCodigoIngresado();
 		return codigoIngresado;
 	}
+	public int recibirCantidadProductoNueva(){
+		cantidadProductoNueva = controladorVentanaAdministrador.mostrarCantidad();
+		return cantidadProductoNueva;
+	}
+	public String recibirAccionAdministrador(){
+		 accionAdministrador=controladorVentanaAdministrador.recibirAccionAdministrador();
+	return accionAdministrador;
+	}
+	
 	
 	public void verificarEspiralSeleccionado(){
 		 controladorDeEspirales.verificarEspiralSeleccionada();

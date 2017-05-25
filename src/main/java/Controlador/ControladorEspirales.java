@@ -35,4 +35,8 @@ public class ControladorEspirales{
 		administradorDeEspirales.cancelarCompra(auxiliarConteoDinero);
 		
 	}
+
+	public void cambiarCantidadDelProducto(String codigoProducto, int cantidadProducto) {
+		administradorDeEspirales.cambiarCantidadProducto(codigoProducto,cantidadProducto);
+	}
 }

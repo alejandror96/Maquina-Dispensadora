@@ -41,22 +41,6 @@ public class AdministradorEspirales {
 		JOptionPane.showMessageDialog(null, "algo");
 	}
 
-	public Boolean verificarContenidoEnEspiral() {
-		Boolean auxiliarVerificacionContenidoEspiral = false;	
-		while(auxiliarVerificacionContenidoEspiral == false){		
-			if (espiral.getCantidad()>1){
-				auxiliarVerificacionContenidoEspiral = true;
-			}else{
-				JOptionPane.showMessageDialog(null, "El producto deseado no posee existencias", "Error", JOptionPane.ERROR_MESSAGE);
-				auxiliarVerificacionContenidoEspiral = false;
-			}
-		}
-		return auxiliarVerificacionContenidoEspiral;
-		
-	}
-
-
-	
 	public void conocerLineaDondeEstaElProducto(String codigo) {
 		File fichero = new File("productos.txt");
 		Scanner s = null;
@@ -94,5 +78,18 @@ public class AdministradorEspirales {
 		JOptionPane.showMessageDialog(null, "Nombre: "+espiral.getProducto()+ " Precio: " + espiral.getPrecioProducto());
 	}
 	
+	public Boolean verificarContenidoEnEspiral() {
+		if (espiral.getCantidad()>1){
+			return true;
+		}
+		JOptionPane.showMessageDialog(null, "El producto seleccionado no posee existencias.");
+		return false;
+	}
 
+	public int obtenerSaldoIngresado(int saldoIngresado) {
+		return saldoIngresado;		
+	}
+	
+
+	
 }

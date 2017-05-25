@@ -13,6 +13,7 @@ public class SistemaDispensador {
 	Boolean estado = true;
 	int saldo;
 	String codigoIngresado;
+	int saldoIngresado;
 	
 	public SistemaDispensador(){
 		super();
@@ -20,6 +21,11 @@ public class SistemaDispensador {
 		enviarCodigoIngresado(codigoIngresado);
 		mostrarNombreYPrecioDeProducto();
 		hacerConteoDelDineroIngresado();
+		enviarSaldoIngresado(saldoIngresado);
+	}
+
+	private void enviarSaldoIngresado(int saldoIngresado) {
+		controladorDeEspirales.eniarSaldoIngresado(saldoIngresado);
 	}
 
 	private void mostrarNombreYPrecioDeProducto() {
@@ -30,12 +36,12 @@ public class SistemaDispensador {
 		controladorDeEspirales.validarSaldoProductoDisponible(codigo);
 	}
 
-
 	public boolean verificarEspiralExistente() {
 		Boolean auxiliarVerificacionEspiral = false;	
 		while(auxiliarVerificacionEspiral == false){		
 			if (controladorDeEspirales.mostrarEspirales().contains(recibirCodigoIngresado()+",")){
 				auxiliarVerificacionEspiral = true;
+				verificarEspiralSeleccionado();
 			}else{
 				JOptionPane.showMessageDialog(null, "El código ingresado no existe", "Error", JOptionPane.ERROR_MESSAGE);
 				auxiliarVerificacionEspiral = false;
@@ -43,7 +49,6 @@ public class SistemaDispensador {
 		}
 		return auxiliarVerificacionEspiral;
 	}
-
 
 	public int hacerConteoDelDineroIngresado() {
 		
@@ -57,6 +62,7 @@ public class SistemaDispensador {
 			JOptionPane.showMessageDialog(null,"Producto a comprar: "+controladorVentanaComprador); 
 			}
 		}
+		saldoIngresado = auxiliarConteoDinero;
 		return auxiliarConteoDinero;
 	}
 
@@ -67,6 +73,10 @@ public class SistemaDispensador {
 	public String recibirCodigoIngresado() {
 		codigoIngresado = controladorVentanaComprador.mostrarCodigoIngresado();
 		return codigoIngresado;
+	}
+	
+	public Boolean verificarEspiralSeleccionado(){
+		return controladorDeEspirales.verificarEspiralSeleccionada();
 	}
 
 	public static void main(String[] args) {

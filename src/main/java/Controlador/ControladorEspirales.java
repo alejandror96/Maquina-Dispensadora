@@ -25,4 +25,10 @@ public class ControladorEspirales{
 	public void rechazarCompra(int saldoIngresado) {
 		administradorDeEspirales.rechazarCompra(saldoIngresado);
 	}
+
+	public void calcularCambio(int saldoIngresado) {
+		administradorDeEspirales.calcularCambio(saldoIngresado);
+		
+	}
+	
 }

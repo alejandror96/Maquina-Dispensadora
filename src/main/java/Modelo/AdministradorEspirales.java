@@ -89,4 +89,14 @@ public class AdministradorEspirales {
 	public int rechazarCompra(int saldoIngresado) {
 		return saldoIngresado;		
 	}
+
+	public void calcularCambio(int saldoIngresado) {
+		int cambio; 
+		cambio= espiral.getPrecioProducto()-saldoIngresado;
+		if(espiral.getPrecioProducto()==saldoIngresado){
+			saldoIngresado=0;
+			JOptionPane.showMessageDialog(null, "compra exitosa");
+		}else 
+	JOptionPane.showMessageDialog(null, "Su cambio es de: "+cambio);
+	}
 }

@@ -22,6 +22,10 @@ public class SistemaDispensador {
 		mostrarNombreYPrecioDeProducto();
 		hacerConteoDelDineroIngresado();
 		rechazarCompra(saldoIngresado);
+		calcularCambio(saldoIngresado);
+	}
+	public void calcularCambio(int saldoIngresado){
+		controladorDeEspirales.calcularCambio(saldoIngresado);
 	}
 
 	private void rechazarCompra(int saldoIngresado) {

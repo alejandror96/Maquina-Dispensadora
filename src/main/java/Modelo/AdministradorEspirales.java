@@ -50,6 +50,7 @@ public class AdministradorEspirales {
 	public void mostrarInformacionProducto(){
 		
 		ControladorEspirales controladorEspiral = new ControladorEspirales();
+<<<<<<< HEAD
 		//mostrarEspirales();
 		//String[] informacionEspirales = new String[4];
 		//informacionEspirales = mostrarEspirales().split(",");
@@ -67,6 +68,8 @@ public class AdministradorEspirales {
 <<<<<<< HEAD
 		return informacionEspirales;
 =======
+=======
+>>>>>>> 96e18f11c4ce4d40b848fa38868804a6906cf74e
 		
 		JOptionPane.showMessageDialog(null, "algo");
 >>>>>>> 0ead8b7f3b990a92f29e06738f1a4809fd03e561

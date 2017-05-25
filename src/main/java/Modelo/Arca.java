@@ -5,6 +5,7 @@ public class Arca {
 	int cantidadAlmacenada;
 	int cantidadMaxima;
 	int idArca;
+	int denominacion;
 	
 	public int getCantidadAlmacenada() {
 		return cantidadAlmacenada;
@@ -30,8 +31,6 @@ public class Arca {
 	public void setDenominacion(int denominacion) {
 		this.denominacion = denominacion;
 	}
-	int denominacion;
-	
 	
 
 }

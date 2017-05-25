@@ -3,12 +3,13 @@ import java.io.File;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-import Controlador.ControladorEspirales;
+import Controlador.SistemaDispensador;
 
 public class AdministradorEspirales {
 	
 	int capacidadMaxima = 15;
 	Espiral datosEspiral;
+	SistemaDispensador dispensador = new SistemaDispensador();
 	
 	public String mostrarEspirales() {
 		File fichero = new File("productos.txt");

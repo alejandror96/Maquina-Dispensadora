@@ -13,12 +13,15 @@ public class SistemaDispensador {
 	public SistemaDispensador(){
 		super();
 		verificarEspiralExistente();
-		
 		hacerConteoDelDineroIngresado();
-	
+		sldlskd();
 	}
 	
-	
+	private void sldlskd() {
+		controladorDeEspirales.algo();
+		
+	}
+
 	public boolean verificarEspiralExistente() {
 		Boolean auxiliarVerificacionEspiral = false;	
 		while(auxiliarVerificacionEspiral == false){		
@@ -32,7 +35,6 @@ public class SistemaDispensador {
 		return auxiliarVerificacionEspiral;
 	}
 
-	
 
 	public int hacerConteoDelDineroIngresado() {
 		

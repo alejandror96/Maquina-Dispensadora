@@ -6,6 +6,8 @@ public class ControladorEspirales{
 
 	AdministradorEspirales administradorDeEspirales = new AdministradorEspirales();
 	
+	public void algo(){
+	}
 	
 	public String mostrarEspirales(){
 		return administradorDeEspirales.mostrarEspirales();
